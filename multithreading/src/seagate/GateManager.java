@@ -1,36 +1,30 @@
 package seagate;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class GateManager {
 	
 	
-	static Queue <Ship> shipsList;  
+	private static BlockingQueue <Ship> shipsList;  
 	
+	private static Warehouse warehouse = new Warehouse();
 	
-	
-	public Queue<Ship> getShipsList(LinkedList<Ship> shipsList){
+	public static BlockingQueue<Ship> getShipsList(){
 		
-		return GateManager.shipsList = shipsList;
-		
+		return shipsList;
 	}
 	
 	
-	
-	public int downloadShip (Ship ship) {
-		
-		new Warehouse();
-		int overallCapacity = Warehouse.getOverallCapacity() + ship.getCapacity();
-		return overallCapacity; 
+	public static Warehouse getWarehouse() {
+		return warehouse;
 	}
-	
 	
 	public synchronized static void main (String[]args) {
 		
-		shipsList = new LinkedList<>();
+		shipsList = new LinkedBlockingQueue<>();
 		
 		shipsList.offer(new Ship("A",500,State.LOADED));
 		shipsList.offer(new Ship("B",1000,State.FREE));

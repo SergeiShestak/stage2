@@ -16,15 +16,6 @@ public class Ship {
 		
 	}
 	
-	public Ship() {
-	}
-
-	public void upload() {
-		
-		for(int i=capacity;i>0;i--) {
-			
-		}
-	}
 	
 	public State getState() {
 		

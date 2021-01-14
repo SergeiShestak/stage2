@@ -2,17 +2,17 @@ package seagate;
 
 public class ThreadProcessor extends Thread {
 
-	Warehouse warehouse = new Warehouse(30000);
+	Warehouse warehouse = GateManager.getWarehouse();
 	
 	public void run () {
 		
 		System.out.printf("Start work of gate: %s \n",Thread.currentThread().getId() );
 		
 		try {
-			while(!(GateManager.shipsList.isEmpty())){
+			while(!(GateManager.getShipsList().isEmpty())){
 				
 		
-			Ship ship =GateManager.shipsList.poll();
+			Ship ship =GateManager.getShipsList().poll();
 			System.out.println("Taken ship is: " + ship +" on thread : "+ Thread.currentThread().getId());
 			Thread.sleep(1000);
 			warehouse.setOverallCapacity(ship);
