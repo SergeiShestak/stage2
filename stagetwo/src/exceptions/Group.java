@@ -1,6 +1,8 @@
 package exceptions;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import sources.Groups;
@@ -8,33 +10,37 @@ import sources.Subjects;
 
 public class Group extends University {
 	
-	Set<Student> students = new HashSet<>();
-	private Groups group;
+	Set<Student> group = new HashSet<>();
 	
-	public Group (Groups group,Set<Student> students) {
-		
-		this.setGroup(group);
-		this.students = students;
-	}
+	public Group () {}
 	
 	public double getSubjectAverageAssesment(Subjects subject) {
-		
+		List<Double> listSubjectAssesments = new ArrayList<>();
 		double groupSubjectAverageAssesment = 0;
 		
-		for(Student student:students) {
+		for(Student student:group) {
 			
-			groupSubjectAverageAssesment += student.getSubjectAverageAssesment(subject);
+			listSubjectAssesments.add(student.getSubjectAverageAssesment(subject));
 		}
-		return groupSubjectAverageAssesment;
+		
+		//System.out.println(listSubjectAssesments.toString());
+		
+		for(Double asses:listSubjectAssesments) {
+			
+			groupSubjectAverageAssesment += asses;
+		}
+		
+		return groupSubjectAverageAssesment/listSubjectAssesments.size();
 		
 	}
 
-	public Groups getGroup() {
+	public Set<Student> getGroup() {
 		return group;
 	}
-
-	public void setGroup(Groups group) {
-		this.group = group;
+	
+	public void setGroup(Student student){
+		
+		this.group.add(student);
 	}
 
 }

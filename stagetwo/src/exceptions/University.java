@@ -1,25 +1,30 @@
 package exceptions;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
+import sources.Faculties;
 import sources.StudyState;
 import sources.Subjects;
 
 public class University implements StudyState{
 	
-	Set<Faculty> faculties = new HashSet<>();
+	Map<Faculties,Faculty> university = new HashMap<>();
 	
 	
 	
-public Set<Faculty> getFaculties() {
-		return faculties;
+public Map<Faculties,Faculty> getFaculties() {
+		return university;
 	}
 
 
 
-	public void setFaculties(Set<Faculty> faculties) {
-		this.faculties = faculties;
+	public void setFaculties(Faculties faculties,Faculty faculty ) {
+		;
 	}
 
 
@@ -27,13 +32,23 @@ public Set<Faculty> getFaculties() {
 public double getSubjectAverageAssesment(Subjects subject) {
 		
 		double universitySubjectAverageAssesment = 0;
+		List<Faculty> assesFaculty = new ArrayList<>();
 		
-		for(Faculty faculty:faculties) {
+		for(Faculty faculty:university.values()) {
 			
-			universitySubjectAverageAssesment += faculty.getSubjectAverageAssesment(subject);
+			assesFaculty.add(faculty);
+		}
+		
+		for(Faculty listFaculty:assesFaculty) {
+			
+			universitySubjectAverageAssesment += listFaculty.getSubjectAverageAssesment(subject);
 		}
 		return universitySubjectAverageAssesment;
 		
 	}
+public double getSubjectAverageAssesment(Subjects subject,Faculties faculty) {
+	
+	
+}
 
 }

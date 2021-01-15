@@ -1,39 +1,71 @@
 package exceptions;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
+import sources.Groups;
 import sources.Subjects;
 
 public class Faculty extends University {
 	
-	Set<Group> groupes = new HashSet<>();
+	Map<Groups,Group> facultySet = new HashMap<>();
 	
 	
-	
-public Set<Group> getGroupes() {
-		return groupes;
+public Map<Groups,Group> getFaculty() {
+		return facultySet;
 	}
 
 
 
-	public void setGroupes(Set<Group> groupes) {
-		this.groupes = groupes;
+	public void setFaculty(Groups key,Group group) {
+		facultySet.put(key,group);
 	}
 
 
 
-public double getSubjectAverageAssesment(Subjects subject) {
+	public double getSubjectAverageAssesment(Subjects subject) {
 		
 		double facultySubjectAverageAssesment = 0;
+		List<Group> subjectAssesment = new ArrayList<>();
 		
-		for(Group group:groupes) {
+		for(Group group:facultySet.values()) {
 			
-			facultySubjectAverageAssesment += group.getSubjectAverageAssesment(subject);
+			subjectAssesment.add(group);
 		}
-		return facultySubjectAverageAssesment;
+		
+		System.out.println("list groups is :" + subjectAssesment.toString());
+		
+		for(Group asses:subjectAssesment) {
+			
+			facultySubjectAverageAssesment += asses.getSubjectAverageAssesment(subject);
+		}
+		return facultySubjectAverageAssesment/subjectAssesment.size();
 		
 	}
 	
+
+	public double getSubjectAverageAssesment(Subjects subject,Groups group) {
+	
+		double facultySubjectAverageAssesment = 0;
+		List<Group> subjectAssesment = new ArrayList<>();
+	
+		for(Group asses:facultySet.values()) {
+		
+			subjectAssesment.add(asses);
+		}
+	
+		System.out.println("list groups is :" + subjectAssesment.toString());
+	
+		for(Group asses:subjectAssesment) {
+		
+			facultySubjectAverageAssesment += asses.getSubjectAverageAssesment(subject);
+		}
+		return facultySubjectAverageAssesment/subjectAssesment.size();
+	
+	}
 
 }

@@ -27,14 +27,9 @@ public class Student extends University{
 		studentObj.put(namePlusSurname, assesments);
 	}
 	
-	public void setAssesments (String namePlusSurname, Subjects subject,Integer gottenAssesment) {
-		
-		//if(surname.equalsIgnoreCase(studentObj.get(surname).toString()))  
+	public void setAssesments (Subjects subject,Integer gottenAssesment) {  
 		
 		assesments.put(subject,gottenAssesment);
-		
-		
-	
 	}
 	
 	public double getOverallAverageAssesment() {
