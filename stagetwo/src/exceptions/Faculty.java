@@ -48,15 +48,12 @@ public Map<Groups,Group> getFaculty() {
 	}
 	
 
-	public double getSubjectAverageAssesment(Subjects subject,Groups group) {
+	public double getSubjectAverageAssesment(Subjects subject,Groups key) {
 	
 		double facultySubjectAverageAssesment = 0;
 		List<Group> subjectAssesment = new ArrayList<>();
-	
-		for(Group asses:facultySet.values()) {
 		
-			subjectAssesment.add(asses);
-		}
+		subjectAssesment.add(facultySet.get(key));
 	
 		System.out.println("list groups is :" + subjectAssesment.toString());
 	

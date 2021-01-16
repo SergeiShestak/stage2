@@ -18,13 +18,13 @@ public class Student extends University{
 	String namePlusSurname;
 	
 	
-	Map<String,MultiValuedMap<Subjects,Integer>> studentObj = new HashMap<>(); 
+	Map<String,MultiValuedMap<Subjects,Integer>> studentObject = new HashMap<>(); 
 	MultiValuedMap<Subjects,Integer> assesments = new ArrayListValuedHashMap<>();
 	
 	
 	public Student(String namePlusSurname) {
 		
-		studentObj.put(namePlusSurname, assesments);
+		studentObject.put(namePlusSurname, assesments);
 	}
 	
 	public void setAssesments (Subjects subject,Integer gottenAssesment) {  
@@ -71,7 +71,7 @@ public class Student extends University{
 	
 	public String toString() {
 		
-		return "Student: " + studentObj;
+		return "Student: " + studentObject;
 	}
 
 
