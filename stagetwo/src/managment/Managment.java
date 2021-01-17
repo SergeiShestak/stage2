@@ -1,11 +1,5 @@
 package managment;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-
 import exceptions.AssesmentException;
 import objects.Faculty;
 import objects.Group;
@@ -22,7 +16,6 @@ public class Managment {
 		Student ivanPetrov = new Student("Ivan Petrov");
 		Student petrIvanov = new Student("Petr Ivanov");
 		Student apetDima = new Student("Apet Dima");
-		Student galkevichIvan = new Student("Galkevich Ivan");
 		Student bondarevAleksey = new Student("Bondarev Aleksey");
 		Student plutMaria = new Student("Plut Maria");
 		Student sidorenkoKsenia = new Student("Sidorenko Ksenia");
@@ -32,13 +25,8 @@ public class Managment {
 		Student demeshMaria = new Student("Demesh Maria");
 		Student kripanValentin = new Student("Kripan Valentin");
 		Student nehaySemen = new Student("Nehay Semen");
-		Student deraboNikita = new Student("Derabo Nikita");
-		Student kondratovichGordey = new Student("Kondratovich Gordey");
 		Student borodavkoKsenia = new Student("Borodavko Ksenia");
 		
-		
-		//Scanner scanner = new Scanner(System.in);
-		//System.out.println("Please, enter Name and Surname of Student :")
 		
 		
 		ivanPetrov.setAssesments(Subjects.MATH,10);
@@ -310,17 +298,19 @@ public class Managment {
 		university.setUnivetsity(Faculties.PHYSICS, physicsFaculty);
 		
 		
-		System.out.println("Math for 2 group" + mathematicalFaculty.getSubjectAverageAssesment(Subjects.MATH, Groups.SECOND));
-		System.out.println("Math for 1 group" + groupFirstMath.getSubjectAverageAssesment(Subjects.MATH));
 		
-		System.out.println("Faculty math , JAVA, 3 group: " + mathematicalFaculty.getSubjectAverageAssesment(Subjects.JAVA,Groups.THIRD));
+		System.out.printf("\n bondarev asses : %.2f",bondarevAleksey.getOverallAverageAssesment());
+		System.out.printf("Math for 2 group: \t%.2f",mathematicalFaculty.getSubjectAverageAssesment(Subjects.MATH, Groups.SECOND));
+		System.out.printf("\n Math for 1 group: \t%.2f",groupFirstMath.getSubjectAverageAssesment(Subjects.MATH));
 		
-		System.out.println("university economics,faculty chemical:  " + university.getSubjectAverageAssesment(Subjects.ECONOMICS, Faculties.CHEMICAL));
-		System.out.println("university math: "+ university.getSubjectAverageAssesment(Subjects.MATH));
+		System.out.printf("\n Faculty math , JAVA, 3 group: \t%.2f",mathematicalFaculty.getSubjectAverageAssesment(Subjects.JAVA,Groups.THIRD));
 		
-		System.out.println("Chemical faculty , ENGLISH ,1 group: " +  chemicalFaculty.getSubjectAverageAssesment(Subjects.ENGLISH, Groups.FIRST));
-		System.out.println("university java: " + university.getSubjectAverageAssesment(Subjects.JAVA));
-		System.out.println("university english:  " + university.getSubjectAverageAssesment(Subjects.ENGLISH));
+		System.out.printf("\n university economics,faculty chemical:\t%.2f",university.getSubjectAverageAssesment(Subjects.ECONOMICS, Faculties.CHEMICAL));
+		System.out.printf("\n university math: \t%.2f",university.getSubjectAverageAssesment(Subjects.MATH));
+		
+		System.out.printf("\n Chemical faculty , ENGLISH ,1 group: \t%.2f",chemicalFaculty.getSubjectAverageAssesment(Subjects.ENGLISH, Groups.FIRST));
+		System.out.printf("\n university java: \t%.2f",university.getSubjectAverageAssesment(Subjects.JAVA));
+		System.out.printf("\n university english: \t%.2f ",university.getSubjectAverageAssesment(Subjects.ENGLISH));
 		
 		
 	

@@ -2,10 +2,8 @@ package objects;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import sources.Groups;
 import sources.Subjects;
@@ -33,6 +31,8 @@ public Map<Groups,Group> getFaculty() {
 		List<Group> subjectAssesment = new ArrayList<>();
 		
 		try {
+			if(facultySet.isEmpty())
+				throw new IllegalArgumentException("Must have at least one group on the faculty");
 			for(Group group:facultySet.values()) {
 				subjectAssesment.add(group);
 			}
@@ -53,6 +53,8 @@ public Map<Groups,Group> getFaculty() {
 		double facultySubjectAverageAssesment = 0;
 		List<Group> subjectAssesment = new ArrayList<>();
 		try {
+			if(facultySet.isEmpty())
+				throw new IllegalArgumentException("Must have at least one group on the faculty");
 			subjectAssesment.add(facultySet.get(key));
 	
 			for(Group asses:subjectAssesment) {

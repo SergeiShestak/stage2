@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import sources.Groups;
 import sources.Subjects;
 
 public class Group extends University {
@@ -18,6 +16,8 @@ public class Group extends University {
 		List<Double> listSubjectAssesments = new ArrayList<>();
 		double groupSubjectAverageAssesment = 0;
 		try {
+			if(group.isEmpty())
+				throw new IllegalArgumentException("Must have at least one student");
 			for(Student student:group) {
 			
 				listSubjectAssesments.add(student.getSubjectAverageAssesment(subject));

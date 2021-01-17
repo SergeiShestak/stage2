@@ -1,12 +1,9 @@
 package objects;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 import org.apache.commons.collections4.MultiValuedMap;
 import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
@@ -46,6 +43,8 @@ public class Student extends University{
 		double sumAssesments = 0;
 		
 		try {
+			if(assesments.isEmpty())
+				throw new IllegalArgumentException("Must have at least one subject");
 		
 			for(int asses:assesments.values()) {
 				
@@ -70,13 +69,15 @@ public class Student extends University{
 		List<Integer> subjectAssesments = new ArrayList<>();
 		
 		try {
-		for(Integer key:assesments.get(subject)) {
+			if(assesments.isEmpty())
+				throw new IllegalArgumentException("Must have at least one subject");
+			for(Integer key:assesments.get(subject)) {
 				
 			    subjectAssesments.add(key);	
-		}
-		for(Integer asses:subjectAssesments) {
+			}
+			for(Integer asses:subjectAssesments) {
 			
-			sumAssesments += asses;
+				sumAssesments += asses;
 			
 		}
 		}catch(NullPointerException e) {
