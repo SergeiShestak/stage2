@@ -1,4 +1,4 @@
-package exceptions;
+package objects;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,16 +32,16 @@ public Map<Groups,Group> getFaculty() {
 		double facultySubjectAverageAssesment = 0;
 		List<Group> subjectAssesment = new ArrayList<>();
 		
-		for(Group group:facultySet.values()) {
+		try {
+			for(Group group:facultySet.values()) {
+				subjectAssesment.add(group);
+			}
+			for(Group asses:subjectAssesment) {
 			
-			subjectAssesment.add(group);
-		}
-		
-		System.out.println("list groups is :" + subjectAssesment.toString());
-		
-		for(Group asses:subjectAssesment) {
-			
-			facultySubjectAverageAssesment += asses.getSubjectAverageAssesment(subject);
+				facultySubjectAverageAssesment += asses.getSubjectAverageAssesment(subject);
+			}
+		}catch(NullPointerException e) {
+			System.err.println("Exception is: " + e.getMessage());
 		}
 		return facultySubjectAverageAssesment/subjectAssesment.size();
 		
@@ -52,14 +52,15 @@ public Map<Groups,Group> getFaculty() {
 	
 		double facultySubjectAverageAssesment = 0;
 		List<Group> subjectAssesment = new ArrayList<>();
-		
-		subjectAssesment.add(facultySet.get(key));
+		try {
+			subjectAssesment.add(facultySet.get(key));
 	
-		System.out.println("list groups is :" + subjectAssesment.toString());
-	
-		for(Group asses:subjectAssesment) {
+			for(Group asses:subjectAssesment) {
 		
-			facultySubjectAverageAssesment += asses.getSubjectAverageAssesment(subject);
+				facultySubjectAverageAssesment += asses.getSubjectAverageAssesment(subject);
+		}
+		}catch(NullPointerException e) {
+			System.err.println("Exception e" + e.getMessage());
 		}
 		return facultySubjectAverageAssesment/subjectAssesment.size();
 	

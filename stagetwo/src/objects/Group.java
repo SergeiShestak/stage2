@@ -1,4 +1,4 @@
-package exceptions;
+package objects;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,17 +17,18 @@ public class Group extends University {
 	public double getSubjectAverageAssesment(Subjects subject) {
 		List<Double> listSubjectAssesments = new ArrayList<>();
 		double groupSubjectAverageAssesment = 0;
-		
-		for(Student student:group) {
+		try {
+			for(Student student:group) {
 			
-			listSubjectAssesments.add(student.getSubjectAverageAssesment(subject));
-		}
+				listSubjectAssesments.add(student.getSubjectAverageAssesment(subject));
+			}
 		
-		//System.out.println(listSubjectAssesments.toString());
-		
-		for(Double asses:listSubjectAssesments) {
+			for(Double asses:listSubjectAssesments) {
 			
-			groupSubjectAverageAssesment += asses;
+				groupSubjectAverageAssesment += asses;
+			}
+		}catch(NullPointerException e) {
+			System.err.println("Exception is: " + e.getMessage());
 		}
 		
 		return groupSubjectAverageAssesment/listSubjectAssesments.size();

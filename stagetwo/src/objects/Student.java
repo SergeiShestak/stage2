@@ -1,14 +1,17 @@
-package exceptions;
+package objects;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 import org.apache.commons.collections4.MultiValuedMap;
 import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
 
+import exceptions.AssesmentException;
 import sources.Subjects;
 
 
@@ -27,26 +30,36 @@ public class Student extends University{
 		studentObject.put(namePlusSurname, assesments);
 	}
 	
-	public void setAssesments (Subjects subject,Integer gottenAssesment) {  
+	public void setAssesments (Subjects subject,Integer gottenAssesment) throws AssesmentException{ 
 		
-		assesments.put(subject,gottenAssesment);
+		if(gottenAssesment > 0 && gottenAssesment <=10) {
+			assesments.put(subject,gottenAssesment);
+		}else {
+			throw new AssesmentException("Invalid assesment, it must be between 1 to 10 ");
+		}
 	}
+	
 	
 	public double getOverallAverageAssesment() {
 		
 		List<Integer> overallAssesments = new ArrayList<>();
-		
 		double sumAssesments = 0;
 		
-		for(int asses:assesments.values()) {
-			
-			overallAssesments.add(asses);
-			}
-			for(int res:overallAssesments) {
+		try {
+		
+			for(int asses:assesments.values()) {
 				
-				sumAssesments += res;
-			}
-			return sumAssesments/overallAssesments.size();
+				overallAssesments.add(asses);
+				}
+				for(int res:overallAssesments) {
+				
+					sumAssesments += res;
+				}
+			
+		}catch(NullPointerException e) {
+			System.err.println("Exception is: " + e.getMessage());
+		}
+		return sumAssesments/overallAssesments.size();
 		
 	}
 	
@@ -56,7 +69,7 @@ public class Student extends University{
 		double sumAssesments = 0;
 		List<Integer> subjectAssesments = new ArrayList<>();
 		
-		
+		try {
 		for(Integer key:assesments.get(subject)) {
 				
 			    subjectAssesments.add(key);	
@@ -64,6 +77,10 @@ public class Student extends University{
 		for(Integer asses:subjectAssesments) {
 			
 			sumAssesments += asses;
+			
+		}
+		}catch(NullPointerException e) {
+			System.err.println("Exception is: " + e.getMessage());
 		}
 		return sumAssesments/subjectAssesments.size();
     }

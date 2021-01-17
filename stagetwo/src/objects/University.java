@@ -1,4 +1,4 @@
-package exceptions;
+package objects;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,14 +32,18 @@ public double getSubjectAverageAssesment(Subjects subject) {
 		double universitySubjectAverageAssesment = 0;
 		List<Faculty> assesFaculty = new ArrayList<>();
 		
-		for(Faculty faculty:universitySet.values()) {
+		try {
+			for(Faculty faculty:universitySet.values()) {
 			
-			assesFaculty.add(faculty);
-		}
+				assesFaculty.add(faculty);
+			}
 		
-		for(Faculty listFaculty:assesFaculty) {
+			for(Faculty listFaculty:assesFaculty) {
 			
-			universitySubjectAverageAssesment += listFaculty.getSubjectAverageAssesment(subject);
+				universitySubjectAverageAssesment += listFaculty.getSubjectAverageAssesment(subject);
+			}
+		}catch(NullPointerException e) {
+			System.err.println("Exception is: " + e.getMessage());
 		}
 		return universitySubjectAverageAssesment/assesFaculty.size();
 		
@@ -47,17 +51,12 @@ public double getSubjectAverageAssesment(Subjects subject) {
 public double getSubjectAverageAssesment(Subjects subject,Faculties faculty) {
 	
 		double univerFacultySubjectAverageAssesment = 0;
-		List<Faculty> assesRefinedFaculty = new ArrayList<>();
+		try {
+		univerFacultySubjectAverageAssesment += universitySet.get(faculty).getSubjectAverageAssesment(subject);
+		}catch(NullPointerException e){
+			System.err.println("Exception is: "+ e.getMessage());
+		}
 		
-		//assesRefinedFaculty.add(universitySet.get(faculty));
-		
-		//for(Faculty assesRefined:assesRefinedFaculty) {
-			
-		//	univerFacultySubjectAverageAssesment += assesRefined.getSubjectAverageAssesment(subject, faculty);
-		//}
-		univerFacultySubjectAverageAssesment = universitySet.get(faculty).getSubjectAverageAssesment(subject, faculty);
-		System.out.println("Average  sub facul: " + univerFacultySubjectAverageAssesment);
-		
-		return univerFacultySubjectAverageAssesment;///assesRefinedFaculty.size();
+		return univerFacultySubjectAverageAssesment;
     }
 }
