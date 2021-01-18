@@ -35,10 +35,7 @@ public double getSubjectAverageAssesment(Subjects subject) {
 		try {
 			if(universitySet.isEmpty())
 				throw new IllegalArgumentException("Must have at least one faculty");
-			for(Faculty faculty:universitySet.values()) {
-			
-				assesFaculty.add(faculty);
-			}
+			assesFaculty.addAll(universitySet.values());
 		
 			for(Faculty listFaculty:assesFaculty) {
 			
@@ -46,6 +43,8 @@ public double getSubjectAverageAssesment(Subjects subject) {
 			}
 		}catch(NullPointerException e) {
 			System.err.println("Exception is: " + e.getMessage());
+		}catch(IllegalArgumentException e){
+			System.out.println("Please add a faculty:  " + e.getMessage());
 		}
 		return universitySubjectAverageAssesment/assesFaculty.size();
 		
@@ -59,6 +58,8 @@ public double getSubjectAverageAssesment(Subjects subject,Faculties faculty) {
 		univerFacultySubjectAverageAssesment += universitySet.get(faculty).getSubjectAverageAssesment(subject);
 		}catch(NullPointerException e){
 			System.err.println("Exception is: "+ e.getMessage());
+		}catch (IllegalArgumentException e){
+			System.out.println("Please add a faculty: " + e.getMessage());
 		}
 		
 		return univerFacultySubjectAverageAssesment;

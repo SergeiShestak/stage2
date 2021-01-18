@@ -299,13 +299,13 @@ public class Managment {
 		
 		
 		
-		System.out.printf("\n bondarev asses : %.2f",bondarevAleksey.getOverallAverageAssesment());
-		System.out.printf("Math for 2 group: \t%.2f",mathematicalFaculty.getSubjectAverageAssesment(Subjects.MATH, Groups.SECOND));
+		System.out.printf("\n Bondarev's assess : %.2f",bondarevAleksey.getOverallAverageAssesment());
+		System.out.printf("\n Math for 2 group: \t%.2f",mathematicalFaculty.getSubjectAverageAssesment(Subjects.MATH, Groups.SECOND));
 		System.out.printf("\n Math for 1 group: \t%.2f",groupFirstMath.getSubjectAverageAssesment(Subjects.MATH));
 		
-		System.out.printf("\n Faculty math , JAVA, 3 group: \t%.2f",mathematicalFaculty.getSubjectAverageAssesment(Subjects.JAVA,Groups.THIRD));
+		System.out.printf("\n Faculty math , java , 3 group: \t%.2f",mathematicalFaculty.getSubjectAverageAssesment(Subjects.JAVA,Groups.THIRD));
 		
-		System.out.printf("\n university economics,faculty chemical:\t%.2f",university.getSubjectAverageAssesment(Subjects.ECONOMICS, Faculties.CHEMICAL));
+		System.out.printf("\n university, economics faculty, chemical:\t%.2f",university.getSubjectAverageAssesment(Subjects.ECONOMICS, Faculties.CHEMICAL));
 		System.out.printf("\n university math: \t%.2f",university.getSubjectAverageAssesment(Subjects.MATH));
 		
 		System.out.printf("\n Chemical faculty , ENGLISH ,1 group: \t%.2f",chemicalFaculty.getSubjectAverageAssesment(Subjects.ENGLISH, Groups.FIRST));

@@ -15,9 +15,6 @@ import sources.Subjects;
 public class Student extends University{
 	
 	
-	String namePlusSurname;
-	
-	
 	Map<String,MultiValuedMap<Subjects,Integer>> studentObject = new HashMap<>(); 
 	MultiValuedMap<Subjects,Integer> assesments = new ArrayListValuedHashMap<>();
 	
@@ -32,7 +29,7 @@ public class Student extends University{
 		if(gottenAssesment > 0 && gottenAssesment <=10) {
 			assesments.put(subject,gottenAssesment);
 		}else {
-			throw new AssesmentException("Invalid assesment, it must be between 1 to 10 ");
+			throw new AssesmentException("Invalid assessment, it must be between 1 to 10 ");
 		}
 	}
 	
@@ -57,6 +54,8 @@ public class Student extends University{
 			
 		}catch(NullPointerException e) {
 			System.err.println("Exception is: " + e.getMessage());
+		}catch(IllegalArgumentException e){
+			System.out.println("Please add subject for student:  " + e.getMessage());
 		}
 		return sumAssesments/overallAssesments.size();
 		
@@ -82,6 +81,8 @@ public class Student extends University{
 		}
 		}catch(NullPointerException e) {
 			System.err.println("Exception is: " + e.getMessage());
+		}catch (IllegalArgumentException e){
+			System.out.println("Please add subject for student:  "+ e.getMessage());
 		}
 		return sumAssesments/subjectAssesments.size();
     }

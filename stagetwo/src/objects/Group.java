@@ -29,6 +29,8 @@ public class Group extends University {
 			}
 		}catch(NullPointerException e) {
 			System.err.println("Exception is: " + e.getMessage());
+		}catch (IllegalArgumentException e){
+			System.out.println("Please add a student: " + e.getMessage());
 		}
 		
 		return groupSubjectAverageAssesment/listSubjectAssesments.size();

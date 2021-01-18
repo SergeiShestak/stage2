@@ -33,15 +33,15 @@ public Map<Groups,Group> getFaculty() {
 		try {
 			if(facultySet.isEmpty())
 				throw new IllegalArgumentException("Must have at least one group on the faculty");
-			for(Group group:facultySet.values()) {
-				subjectAssesment.add(group);
-			}
+			subjectAssesment.addAll(facultySet.values());
 			for(Group asses:subjectAssesment) {
 			
 				facultySubjectAverageAssesment += asses.getSubjectAverageAssesment(subject);
 			}
 		}catch(NullPointerException e) {
 			System.err.println("Exception is: " + e.getMessage());
+		}catch (IllegalArgumentException e){
+			System.out.println("Please add a group: " + e.getMessage());
 		}
 		return facultySubjectAverageAssesment/subjectAssesment.size();
 		
@@ -63,6 +63,8 @@ public Map<Groups,Group> getFaculty() {
 		}
 		}catch(NullPointerException e) {
 			System.err.println("Exception e" + e.getMessage());
+		}catch (IllegalArgumentException e){
+			System.out.println("Please add a group: " + e.getMessage());
 		}
 		return facultySubjectAverageAssesment/subjectAssesment.size();
 	
