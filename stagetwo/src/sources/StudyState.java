@@ -1,7 +1,9 @@
 package sources;
 
+import exceptions.AssessmentException;
+
 public interface StudyState {
 	
-	public double getSubjectAverageAssesment(Subjects subject);
+	public double getSubjectAverageAssessment(Subjects subject) throws AssessmentException;
 
 }

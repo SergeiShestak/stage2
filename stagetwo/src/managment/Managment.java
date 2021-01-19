@@ -1,6 +1,6 @@
 package managment;
 
-import exceptions.AssesmentException;
+import exceptions.AssessmentException;
 import objects.Faculty;
 import objects.Group;
 import objects.Student;
@@ -11,7 +11,7 @@ import sources.Subjects;
 
 public class Managment {
 	
-	public static void main(String[] args) throws AssesmentException {
+	public static void main(String[] args) throws AssessmentException {
 		
 		Student ivanPetrov = new Student("Ivan Petrov");
 		Student petrIvanov = new Student("Petr Ivanov");
@@ -29,76 +29,76 @@ public class Managment {
 		
 		
 		
-		ivanPetrov.setAssesments(Subjects.MATH,10);
-		ivanPetrov.setAssesments(Subjects.MATH,9);
-		ivanPetrov.setAssesments(Subjects.MATH,10);
-		ivanPetrov.setAssesments(Subjects.MATH,10);
-		ivanPetrov.setAssesments(Subjects.ENGLISH, 9);
-		ivanPetrov.setAssesments(Subjects.ENGLISH, 10);
-		ivanPetrov.setAssesments(Subjects.ENGLISH, 7);
-		ivanPetrov.setAssesments(Subjects.ENGLISH, 8);
-		ivanPetrov.setAssesments(Subjects.ECONOMICS,8);
-		ivanPetrov.setAssesments(Subjects.ECONOMICS,9);
-		ivanPetrov.setAssesments(Subjects.ECONOMICS,10);
-		ivanPetrov.setAssesments(Subjects.ECONOMICS,7);
-		ivanPetrov.setAssesments(Subjects.JAVA,10);
-		ivanPetrov.setAssesments(Subjects.JAVA,8);
-		ivanPetrov.setAssesments(Subjects.JAVA,9);
-		ivanPetrov.setAssesments(Subjects.JAVA,10);
+		ivanPetrov.setAssessments(Subjects.MATH,10);
+		ivanPetrov.setAssessments(Subjects.MATH,9);
+		ivanPetrov.setAssessments(Subjects.MATH,10);
+		ivanPetrov.setAssessments(Subjects.MATH,10);
+		ivanPetrov.setAssessments(Subjects.ENGLISH, 9);
+		ivanPetrov.setAssessments(Subjects.ENGLISH, 10);
+		ivanPetrov.setAssessments(Subjects.ENGLISH, 7);
+		ivanPetrov.setAssessments(Subjects.ENGLISH, 8);
+		ivanPetrov.setAssessments(Subjects.ECONOMICS,8);
+		ivanPetrov.setAssessments(Subjects.ECONOMICS,9);
+		ivanPetrov.setAssessments(Subjects.ECONOMICS,10);
+		ivanPetrov.setAssessments(Subjects.ECONOMICS,7);
+		ivanPetrov.setAssessments(Subjects.JAVA,10);
+		ivanPetrov.setAssessments(Subjects.JAVA,8);
+		ivanPetrov.setAssessments(Subjects.JAVA,9);
+		ivanPetrov.setAssessments(Subjects.JAVA,10);
 		
 		
-		petrIvanov.setAssesments(Subjects.JAVA, 7);
-		petrIvanov.setAssesments(Subjects.JAVA, 10);
-		petrIvanov.setAssesments(Subjects.JAVA, 9);
-		petrIvanov.setAssesments(Subjects.JAVA, 8);
-		petrIvanov.setAssesments(Subjects.ENGLISH,7);
-		petrIvanov.setAssesments(Subjects.ENGLISH,8);
-		petrIvanov.setAssesments(Subjects.ENGLISH,9);
-		petrIvanov.setAssesments(Subjects.ENGLISH,7);
-		petrIvanov.setAssesments(Subjects.MATH, 9);
-		petrIvanov.setAssesments(Subjects.MATH, 7);
-		petrIvanov.setAssesments(Subjects.MATH, 8);
-		petrIvanov.setAssesments(Subjects.MATH, 10);
-		petrIvanov.setAssesments(Subjects.ECONOMICS, 5);
-		petrIvanov.setAssesments(Subjects.ECONOMICS, 7);
-		petrIvanov.setAssesments(Subjects.ECONOMICS, 6);
-		petrIvanov.setAssesments(Subjects.ECONOMICS, 9);
-		petrIvanov.setAssesments(Subjects.ECONOMICS, 7);
+		petrIvanov.setAssessments(Subjects.JAVA, 7);
+		petrIvanov.setAssessments(Subjects.JAVA, 10);
+		petrIvanov.setAssessments(Subjects.JAVA, 9);
+		petrIvanov.setAssessments(Subjects.JAVA, 8);
+		petrIvanov.setAssessments(Subjects.ENGLISH,7);
+		petrIvanov.setAssessments(Subjects.ENGLISH,8);
+		petrIvanov.setAssessments(Subjects.ENGLISH,9);
+		petrIvanov.setAssessments(Subjects.ENGLISH,7);
+		petrIvanov.setAssessments(Subjects.MATH, 9);
+		petrIvanov.setAssessments(Subjects.MATH, 7);
+		petrIvanov.setAssessments(Subjects.MATH, 8);
+		petrIvanov.setAssessments(Subjects.MATH, 10);
+		petrIvanov.setAssessments(Subjects.ECONOMICS, 5);
+		petrIvanov.setAssessments(Subjects.ECONOMICS, 7);
+		petrIvanov.setAssessments(Subjects.ECONOMICS, 6);
+		petrIvanov.setAssessments(Subjects.ECONOMICS, 9);
+		petrIvanov.setAssessments(Subjects.ECONOMICS, 7);
 		
 		
-		plutMaria.setAssesments(Subjects.ECONOMICS, 9);
-		plutMaria.setAssesments(Subjects.ECONOMICS, 7);
-		plutMaria.setAssesments(Subjects.ECONOMICS, 10);
-		plutMaria.setAssesments(Subjects.ECONOMICS, 10);
-		plutMaria.setAssesments(Subjects.MATH, 9);
-		plutMaria.setAssesments(Subjects.MATH, 7);
-		plutMaria.setAssesments(Subjects.MATH, 8);
-		plutMaria.setAssesments(Subjects.MATH, 10);
-		plutMaria.setAssesments(Subjects.ENGLISH, 10);
-		plutMaria.setAssesments(Subjects.ENGLISH, 10);
-		plutMaria.setAssesments(Subjects.ENGLISH, 10);
-		plutMaria.setAssesments(Subjects.ENGLISH, 9);
-		plutMaria.setAssesments(Subjects.JAVA, 7);
-		plutMaria.setAssesments(Subjects.JAVA, 5);
-		plutMaria.setAssesments(Subjects.JAVA, 8);
-		plutMaria.setAssesments(Subjects.JAVA, 7);
+		plutMaria.setAssessments(Subjects.ECONOMICS, 9);
+		plutMaria.setAssessments(Subjects.ECONOMICS, 7);
+		plutMaria.setAssessments(Subjects.ECONOMICS, 10);
+		plutMaria.setAssessments(Subjects.ECONOMICS, 10);
+		plutMaria.setAssessments(Subjects.MATH, 9);
+		plutMaria.setAssessments(Subjects.MATH, 7);
+		plutMaria.setAssessments(Subjects.MATH, 8);
+		plutMaria.setAssessments(Subjects.MATH, 10);
+		plutMaria.setAssessments(Subjects.ENGLISH, 10);
+		plutMaria.setAssessments(Subjects.ENGLISH, 10);
+		plutMaria.setAssessments(Subjects.ENGLISH, 10);
+		plutMaria.setAssessments(Subjects.ENGLISH, 9);
+		plutMaria.setAssessments(Subjects.JAVA, 7);
+		plutMaria.setAssessments(Subjects.JAVA, 5);
+		plutMaria.setAssessments(Subjects.JAVA, 8);
+		plutMaria.setAssessments(Subjects.JAVA, 7);
 		
-		borodavkoKsenia.setAssesments(Subjects.ECONOMICS, 9);
-		borodavkoKsenia.setAssesments(Subjects.ECONOMICS, 8);
-		borodavkoKsenia.setAssesments(Subjects.ECONOMICS, 7);
-		borodavkoKsenia.setAssesments(Subjects.ECONOMICS, 9);
-		borodavkoKsenia.setAssesments(Subjects.JAVA, 9);
-		borodavkoKsenia.setAssesments(Subjects.JAVA, 8);
-		borodavkoKsenia.setAssesments(Subjects.JAVA, 9);
-		borodavkoKsenia.setAssesments(Subjects.JAVA, 10);
-		borodavkoKsenia.setAssesments(Subjects.MATH, 9);
-		borodavkoKsenia.setAssesments(Subjects.MATH, 9);
-		borodavkoKsenia.setAssesments(Subjects.MATH, 9);
-		borodavkoKsenia.setAssesments(Subjects.MATH, 9);
-		borodavkoKsenia.setAssesments(Subjects.ENGLISH, 9);
-		borodavkoKsenia.setAssesments(Subjects.ENGLISH, 6);
-		borodavkoKsenia.setAssesments(Subjects.ENGLISH, 10);
-		borodavkoKsenia.setAssesments(Subjects.ENGLISH, 9);
+		borodavkoKsenia.setAssessments(Subjects.ECONOMICS, 9);
+		borodavkoKsenia.setAssessments(Subjects.ECONOMICS, 8);
+		borodavkoKsenia.setAssessments(Subjects.ECONOMICS, 7);
+		borodavkoKsenia.setAssessments(Subjects.ECONOMICS, 9);
+		borodavkoKsenia.setAssessments(Subjects.JAVA, 9);
+		borodavkoKsenia.setAssessments(Subjects.JAVA, 8);
+		borodavkoKsenia.setAssessments(Subjects.JAVA, 9);
+		borodavkoKsenia.setAssessments(Subjects.JAVA, 10);
+		borodavkoKsenia.setAssessments(Subjects.MATH, 9);
+		borodavkoKsenia.setAssessments(Subjects.MATH, 9);
+		borodavkoKsenia.setAssessments(Subjects.MATH, 9);
+		borodavkoKsenia.setAssessments(Subjects.MATH, 9);
+		borodavkoKsenia.setAssessments(Subjects.ENGLISH, 9);
+		borodavkoKsenia.setAssessments(Subjects.ENGLISH, 6);
+		borodavkoKsenia.setAssessments(Subjects.ENGLISH, 10);
+		borodavkoKsenia.setAssessments(Subjects.ENGLISH, 9);
 		
 		
 		
@@ -119,75 +119,75 @@ public class Managment {
 		mathematicalFaculty.setFaculty(Groups.THIRD, groupThirdMath);
 		mathematicalFaculty.setFaculty(Groups.FOURTH, groupFourthMath);
 		
-		nehaySemen.setAssesments(Subjects.ENGLISH, 9);
-		nehaySemen.setAssesments(Subjects.ENGLISH, 9);
-		nehaySemen.setAssesments(Subjects.ENGLISH, 9);
-		nehaySemen.setAssesments(Subjects.ENGLISH, 9);
-		nehaySemen.setAssesments(Subjects.MATH, 9);
-		nehaySemen.setAssesments(Subjects.ENGLISH, 9);
-		nehaySemen.setAssesments(Subjects.MATH, 6);
-		nehaySemen.setAssesments(Subjects.MATH, 5);
-		nehaySemen.setAssesments(Subjects.MATH, 9);
-		nehaySemen.setAssesments(Subjects.JAVA, 9);
-		nehaySemen.setAssesments(Subjects.JAVA, 10);
-		nehaySemen.setAssesments(Subjects.JAVA, 9);
-		nehaySemen.setAssesments(Subjects.JAVA, 9);
-		nehaySemen.setAssesments(Subjects.ECONOMICS, 9);
-		nehaySemen.setAssesments(Subjects.ECONOMICS, 10);
-		nehaySemen.setAssesments(Subjects.ECONOMICS, 7);
-		nehaySemen.setAssesments(Subjects.ECONOMICS, 5);
-		nehaySemen.setAssesments(Subjects.ECONOMICS, 9);
+		nehaySemen.setAssessments(Subjects.ENGLISH, 9);
+		nehaySemen.setAssessments(Subjects.ENGLISH, 9);
+		nehaySemen.setAssessments(Subjects.ENGLISH, 9);
+		nehaySemen.setAssessments(Subjects.ENGLISH, 9);
+		nehaySemen.setAssessments(Subjects.MATH, 9);
+		nehaySemen.setAssessments(Subjects.ENGLISH, 9);
+		nehaySemen.setAssessments(Subjects.MATH, 6);
+		nehaySemen.setAssessments(Subjects.MATH, 5);
+		nehaySemen.setAssessments(Subjects.MATH, 9);
+		nehaySemen.setAssessments(Subjects.JAVA, 9);
+		nehaySemen.setAssessments(Subjects.JAVA, 10);
+		nehaySemen.setAssessments(Subjects.JAVA, 9);
+		nehaySemen.setAssessments(Subjects.JAVA, 9);
+		nehaySemen.setAssessments(Subjects.ECONOMICS, 9);
+		nehaySemen.setAssessments(Subjects.ECONOMICS, 10);
+		nehaySemen.setAssessments(Subjects.ECONOMICS, 7);
+		nehaySemen.setAssessments(Subjects.ECONOMICS, 5);
+		nehaySemen.setAssessments(Subjects.ECONOMICS, 9);
 		
-		kripanValentin.setAssesments(Subjects.ENGLISH, 9);
-		kripanValentin.setAssesments(Subjects.ENGLISH, 7);
-		kripanValentin.setAssesments(Subjects.ENGLISH, 6);
-		kripanValentin.setAssesments(Subjects.ENGLISH, 9);
-		kripanValentin.setAssesments(Subjects.JAVA, 7);
-		kripanValentin.setAssesments(Subjects.JAVA, 9);
-		kripanValentin.setAssesments(Subjects.JAVA, 8);
-		kripanValentin.setAssesments(Subjects.JAVA, 9);
-		kripanValentin.setAssesments(Subjects.MATH, 6);
-		kripanValentin.setAssesments(Subjects.MATH, 9);
-		kripanValentin.setAssesments(Subjects.MATH, 8);
-		kripanValentin.setAssesments(Subjects.MATH, 9);
-		kripanValentin.setAssesments(Subjects.ECONOMICS, 9);
-		kripanValentin.setAssesments(Subjects.ECONOMICS, 10);
-		kripanValentin.setAssesments(Subjects.ECONOMICS, 9);
-		kripanValentin.setAssesments(Subjects.ECONOMICS, 9);
+		kripanValentin.setAssessments(Subjects.ENGLISH, 9);
+		kripanValentin.setAssessments(Subjects.ENGLISH, 7);
+		kripanValentin.setAssessments(Subjects.ENGLISH, 6);
+		kripanValentin.setAssessments(Subjects.ENGLISH, 9);
+		kripanValentin.setAssessments(Subjects.JAVA, 7);
+		kripanValentin.setAssessments(Subjects.JAVA, 9);
+		kripanValentin.setAssessments(Subjects.JAVA, 8);
+		kripanValentin.setAssessments(Subjects.JAVA, 9);
+		kripanValentin.setAssessments(Subjects.MATH, 6);
+		kripanValentin.setAssessments(Subjects.MATH, 9);
+		kripanValentin.setAssessments(Subjects.MATH, 8);
+		kripanValentin.setAssessments(Subjects.MATH, 9);
+		kripanValentin.setAssessments(Subjects.ECONOMICS, 9);
+		kripanValentin.setAssessments(Subjects.ECONOMICS, 10);
+		kripanValentin.setAssessments(Subjects.ECONOMICS, 9);
+		kripanValentin.setAssessments(Subjects.ECONOMICS, 9);
 		
-		demeshMaria.setAssesments(Subjects.ENGLISH, 9);
-		demeshMaria.setAssesments(Subjects.ENGLISH, 7);
-		demeshMaria.setAssesments(Subjects.ENGLISH, 7);
-		demeshMaria.setAssesments(Subjects.ENGLISH, 9);
-		demeshMaria.setAssesments(Subjects.MATH, 8);
-		demeshMaria.setAssesments(Subjects.MATH, 9);
-		demeshMaria.setAssesments(Subjects.MATH, 9);
-		demeshMaria.setAssesments(Subjects.MATH, 6);
-		demeshMaria.setAssesments(Subjects.JAVA, 9);
-		demeshMaria.setAssesments(Subjects.JAVA, 5);
-		demeshMaria.setAssesments(Subjects.JAVA, 6);
-		demeshMaria.setAssesments(Subjects.JAVA, 9);
-		demeshMaria.setAssesments(Subjects.ECONOMICS, 8);
-		demeshMaria.setAssesments(Subjects.ECONOMICS, 6);
-		demeshMaria.setAssesments(Subjects.ECONOMICS, 9);
-		demeshMaria.setAssesments(Subjects.ECONOMICS, 10);
+		demeshMaria.setAssessments(Subjects.ENGLISH, 9);
+		demeshMaria.setAssessments(Subjects.ENGLISH, 7);
+		demeshMaria.setAssessments(Subjects.ENGLISH, 7);
+		demeshMaria.setAssessments(Subjects.ENGLISH, 9);
+		demeshMaria.setAssessments(Subjects.MATH, 8);
+		demeshMaria.setAssessments(Subjects.MATH, 9);
+		demeshMaria.setAssessments(Subjects.MATH, 9);
+		demeshMaria.setAssessments(Subjects.MATH, 6);
+		demeshMaria.setAssessments(Subjects.JAVA, 9);
+		demeshMaria.setAssessments(Subjects.JAVA, 5);
+		demeshMaria.setAssessments(Subjects.JAVA, 6);
+		demeshMaria.setAssessments(Subjects.JAVA, 9);
+		demeshMaria.setAssessments(Subjects.ECONOMICS, 8);
+		demeshMaria.setAssessments(Subjects.ECONOMICS, 6);
+		demeshMaria.setAssessments(Subjects.ECONOMICS, 9);
+		demeshMaria.setAssessments(Subjects.ECONOMICS, 10);
 		
-		mironchikovaViktoria.setAssesments(Subjects.ENGLISH, 9);
-		mironchikovaViktoria.setAssesments(Subjects.ENGLISH, 8);
-		mironchikovaViktoria.setAssesments(Subjects.ENGLISH, 7);
-		mironchikovaViktoria.setAssesments(Subjects.ENGLISH, 9);
-		mironchikovaViktoria.setAssesments(Subjects.ECONOMICS, 9);
-		mironchikovaViktoria.setAssesments(Subjects.ECONOMICS, 10);
-		mironchikovaViktoria.setAssesments(Subjects.ECONOMICS, 9);
-		mironchikovaViktoria.setAssesments(Subjects.ECONOMICS, 9);
-		mironchikovaViktoria.setAssesments(Subjects.JAVA, 9);
-		mironchikovaViktoria.setAssesments(Subjects.JAVA, 9);
-		mironchikovaViktoria.setAssesments(Subjects.JAVA, 9);
-		mironchikovaViktoria.setAssesments(Subjects.JAVA, 8);
-		mironchikovaViktoria.setAssesments(Subjects.MATH, 9);
-		mironchikovaViktoria.setAssesments(Subjects.MATH, 10);
-		mironchikovaViktoria.setAssesments(Subjects.MATH, 9);
-		mironchikovaViktoria.setAssesments(Subjects.MATH, 9);
+		mironchikovaViktoria.setAssessments(Subjects.ENGLISH, 9);
+		mironchikovaViktoria.setAssessments(Subjects.ENGLISH, 8);
+		mironchikovaViktoria.setAssessments(Subjects.ENGLISH, 7);
+		mironchikovaViktoria.setAssessments(Subjects.ENGLISH, 9);
+		mironchikovaViktoria.setAssessments(Subjects.ECONOMICS, 9);
+		mironchikovaViktoria.setAssessments(Subjects.ECONOMICS, 10);
+		mironchikovaViktoria.setAssessments(Subjects.ECONOMICS, 9);
+		mironchikovaViktoria.setAssessments(Subjects.ECONOMICS, 9);
+		mironchikovaViktoria.setAssessments(Subjects.JAVA, 9);
+		mironchikovaViktoria.setAssessments(Subjects.JAVA, 9);
+		mironchikovaViktoria.setAssessments(Subjects.JAVA, 9);
+		mironchikovaViktoria.setAssessments(Subjects.JAVA, 8);
+		mironchikovaViktoria.setAssessments(Subjects.MATH, 9);
+		mironchikovaViktoria.setAssessments(Subjects.MATH, 10);
+		mironchikovaViktoria.setAssessments(Subjects.MATH, 9);
+		mironchikovaViktoria.setAssessments(Subjects.MATH, 9);
 		
 		
 		Group groupFirstChemical = new Group();
@@ -207,73 +207,73 @@ public class Managment {
 		chemicalFaculty.setFaculty(Groups.FOURTH, groupFourthChemical);
 		
 		
-		lastovkaValeria.setAssesments(Subjects.ECONOMICS, 7);
-		lastovkaValeria.setAssesments(Subjects.ECONOMICS, 7);
-		lastovkaValeria.setAssesments(Subjects.ECONOMICS, 7);
-		lastovkaValeria.setAssesments(Subjects.ECONOMICS, 7);
-		lastovkaValeria.setAssesments(Subjects.JAVA, 7);
-		lastovkaValeria.setAssesments(Subjects.JAVA, 7);
-		lastovkaValeria.setAssesments(Subjects.JAVA, 7);
-		lastovkaValeria.setAssesments(Subjects.JAVA, 7);
-		lastovkaValeria.setAssesments(Subjects.ENGLISH, 7);
-		lastovkaValeria.setAssesments(Subjects.ENGLISH, 7);
-		lastovkaValeria.setAssesments(Subjects.ENGLISH, 7);
-		lastovkaValeria.setAssesments(Subjects.ENGLISH, 7);
-		lastovkaValeria.setAssesments(Subjects.MATH, 7);
-		lastovkaValeria.setAssesments(Subjects.MATH, 7);
-		lastovkaValeria.setAssesments(Subjects.MATH, 7);
-		lastovkaValeria.setAssesments(Subjects.MATH, 7);
+		lastovkaValeria.setAssessments(Subjects.ECONOMICS, 7);
+		lastovkaValeria.setAssessments(Subjects.ECONOMICS, 7);
+		lastovkaValeria.setAssessments(Subjects.ECONOMICS, 7);
+		lastovkaValeria.setAssessments(Subjects.ECONOMICS, 7);
+		lastovkaValeria.setAssessments(Subjects.JAVA, 7);
+		lastovkaValeria.setAssessments(Subjects.JAVA, 7);
+		lastovkaValeria.setAssessments(Subjects.JAVA, 7);
+		lastovkaValeria.setAssessments(Subjects.JAVA, 7);
+		lastovkaValeria.setAssessments(Subjects.ENGLISH, 7);
+		lastovkaValeria.setAssessments(Subjects.ENGLISH, 7);
+		lastovkaValeria.setAssessments(Subjects.ENGLISH, 7);
+		lastovkaValeria.setAssessments(Subjects.ENGLISH, 7);
+		lastovkaValeria.setAssessments(Subjects.MATH, 7);
+		lastovkaValeria.setAssessments(Subjects.MATH, 7);
+		lastovkaValeria.setAssessments(Subjects.MATH, 7);
+		lastovkaValeria.setAssessments(Subjects.MATH, 7);
 		
-		nichipurchikAleksey.setAssesments(Subjects.MATH, 7);
-		nichipurchikAleksey.setAssesments(Subjects.MATH, 7);
-		nichipurchikAleksey.setAssesments(Subjects.MATH, 7);
-		nichipurchikAleksey.setAssesments(Subjects.MATH, 7);
-		nichipurchikAleksey.setAssesments(Subjects.ENGLISH, 7);
-		nichipurchikAleksey.setAssesments(Subjects.ENGLISH, 7);
-		nichipurchikAleksey.setAssesments(Subjects.ENGLISH, 7);
-		nichipurchikAleksey.setAssesments(Subjects.ENGLISH, 7);
-		nichipurchikAleksey.setAssesments(Subjects.ECONOMICS, 7);
-		nichipurchikAleksey.setAssesments(Subjects.ECONOMICS, 7);
-		nichipurchikAleksey.setAssesments(Subjects.ECONOMICS, 7);
-		nichipurchikAleksey.setAssesments(Subjects.ECONOMICS, 7);
-		nichipurchikAleksey.setAssesments(Subjects.JAVA, 7);
-		nichipurchikAleksey.setAssesments(Subjects.JAVA, 7);
-		nichipurchikAleksey.setAssesments(Subjects.JAVA, 7);
-		nichipurchikAleksey.setAssesments(Subjects.JAVA, 7);
+		nichipurchikAleksey.setAssessments(Subjects.MATH, 7);
+		nichipurchikAleksey.setAssessments(Subjects.MATH, 7);
+		nichipurchikAleksey.setAssessments(Subjects.MATH, 7);
+		nichipurchikAleksey.setAssessments(Subjects.MATH, 7);
+		nichipurchikAleksey.setAssessments(Subjects.ENGLISH, 7);
+		nichipurchikAleksey.setAssessments(Subjects.ENGLISH, 7);
+		nichipurchikAleksey.setAssessments(Subjects.ENGLISH, 7);
+		nichipurchikAleksey.setAssessments(Subjects.ENGLISH, 7);
+		nichipurchikAleksey.setAssessments(Subjects.ECONOMICS, 7);
+		nichipurchikAleksey.setAssessments(Subjects.ECONOMICS, 7);
+		nichipurchikAleksey.setAssessments(Subjects.ECONOMICS, 7);
+		nichipurchikAleksey.setAssessments(Subjects.ECONOMICS, 7);
+		nichipurchikAleksey.setAssessments(Subjects.JAVA, 7);
+		nichipurchikAleksey.setAssessments(Subjects.JAVA, 7);
+		nichipurchikAleksey.setAssessments(Subjects.JAVA, 7);
+		nichipurchikAleksey.setAssessments(Subjects.JAVA, 7);
 		
-		sidorenkoKsenia.setAssesments(Subjects.JAVA, 7);
-		sidorenkoKsenia.setAssesments(Subjects.JAVA, 7);
-		sidorenkoKsenia.setAssesments(Subjects.JAVA, 7);
-		sidorenkoKsenia.setAssesments(Subjects.JAVA, 7);
-		sidorenkoKsenia.setAssesments(Subjects.ECONOMICS, 7);
-		sidorenkoKsenia.setAssesments(Subjects.ECONOMICS, 7);
-		sidorenkoKsenia.setAssesments(Subjects.ECONOMICS, 7);
-		sidorenkoKsenia.setAssesments(Subjects.ECONOMICS, 7);
-		sidorenkoKsenia.setAssesments(Subjects.ENGLISH, 7);
-		sidorenkoKsenia.setAssesments(Subjects.ENGLISH, 7);
-		sidorenkoKsenia.setAssesments(Subjects.ENGLISH, 7);
-		sidorenkoKsenia.setAssesments(Subjects.ENGLISH, 7);
-		sidorenkoKsenia.setAssesments(Subjects.MATH, 7);
-		sidorenkoKsenia.setAssesments(Subjects.MATH, 7);
-		sidorenkoKsenia.setAssesments(Subjects.MATH, 7);
-		sidorenkoKsenia.setAssesments(Subjects.MATH, 7);
+		sidorenkoKsenia.setAssessments(Subjects.JAVA, 7);
+		sidorenkoKsenia.setAssessments(Subjects.JAVA, 7);
+		sidorenkoKsenia.setAssessments(Subjects.JAVA, 7);
+		sidorenkoKsenia.setAssessments(Subjects.JAVA, 7);
+		sidorenkoKsenia.setAssessments(Subjects.ECONOMICS, 7);
+		sidorenkoKsenia.setAssessments(Subjects.ECONOMICS, 7);
+		sidorenkoKsenia.setAssessments(Subjects.ECONOMICS, 7);
+		sidorenkoKsenia.setAssessments(Subjects.ECONOMICS, 7);
+		sidorenkoKsenia.setAssessments(Subjects.ENGLISH, 7);
+		sidorenkoKsenia.setAssessments(Subjects.ENGLISH, 7);
+		sidorenkoKsenia.setAssessments(Subjects.ENGLISH, 7);
+		sidorenkoKsenia.setAssessments(Subjects.ENGLISH, 7);
+		sidorenkoKsenia.setAssessments(Subjects.MATH, 7);
+		sidorenkoKsenia.setAssessments(Subjects.MATH, 7);
+		sidorenkoKsenia.setAssessments(Subjects.MATH, 7);
+		sidorenkoKsenia.setAssessments(Subjects.MATH, 7);
 		
-		apetDima.setAssesments(Subjects.MATH, 7);
-		apetDima.setAssesments(Subjects.MATH, 7);
-		apetDima.setAssesments(Subjects.MATH, 7);
-		apetDima.setAssesments(Subjects.MATH, 7);
-		apetDima.setAssesments(Subjects.ECONOMICS, 7);
-		apetDima.setAssesments(Subjects.ECONOMICS, 7);
-		apetDima.setAssesments(Subjects.ECONOMICS, 7);
-		apetDima.setAssesments(Subjects.ECONOMICS, 7);
-		apetDima.setAssesments(Subjects.ENGLISH, 7);
-		apetDima.setAssesments(Subjects.ENGLISH, 7);
-		apetDima.setAssesments(Subjects.ENGLISH, 7);
-		apetDima.setAssesments(Subjects.ENGLISH, 7);
-		apetDima.setAssesments(Subjects.JAVA, 7);
-		apetDima.setAssesments(Subjects.JAVA, 7);
-		apetDima.setAssesments(Subjects.JAVA, 7);
-		apetDima.setAssesments(Subjects.JAVA, 7);
+		apetDima.setAssessments(Subjects.MATH, 7);
+		apetDima.setAssessments(Subjects.MATH, 7);
+		apetDima.setAssessments(Subjects.MATH, 7);
+		apetDima.setAssessments(Subjects.MATH, 7);
+		apetDima.setAssessments(Subjects.ECONOMICS, 7);
+		apetDima.setAssessments(Subjects.ECONOMICS, 7);
+		apetDima.setAssessments(Subjects.ECONOMICS, 7);
+		apetDima.setAssessments(Subjects.ECONOMICS, 7);
+		apetDima.setAssessments(Subjects.ENGLISH, 7);
+		apetDima.setAssessments(Subjects.ENGLISH, 7);
+		apetDima.setAssessments(Subjects.ENGLISH, 7);
+		apetDima.setAssessments(Subjects.ENGLISH, 7);
+		apetDima.setAssessments(Subjects.JAVA, 7);
+		apetDima.setAssessments(Subjects.JAVA, 7);
+		apetDima.setAssessments(Subjects.JAVA, 7);
+		apetDima.setAssessments(Subjects.JAVA, 7);
 		
 		
 		Group groupFirstPhysics = new Group();
@@ -296,21 +296,24 @@ public class Managment {
 		university.setUnivetsity(Faculties.CHEMICAL, chemicalFaculty);
 		university.setUnivetsity(Faculties.MATHEMATICAL, mathematicalFaculty);
 		university.setUnivetsity(Faculties.PHYSICS, physicsFaculty);
+
 		
-		
-		
-		System.out.printf("\n Bondarev's assess : %.2f",bondarevAleksey.getOverallAverageAssesment());
-		System.out.printf("\n Math for 2 group: \t%.2f",mathematicalFaculty.getSubjectAverageAssesment(Subjects.MATH, Groups.SECOND));
-		System.out.printf("\n Math for 1 group: \t%.2f",groupFirstMath.getSubjectAverageAssesment(Subjects.MATH));
-		
-		System.out.printf("\n Faculty math , java , 3 group: \t%.2f",mathematicalFaculty.getSubjectAverageAssesment(Subjects.JAVA,Groups.THIRD));
-		
-		System.out.printf("\n university, economics faculty, chemical:\t%.2f",university.getSubjectAverageAssesment(Subjects.ECONOMICS, Faculties.CHEMICAL));
-		System.out.printf("\n university math: \t%.2f",university.getSubjectAverageAssesment(Subjects.MATH));
-		
-		System.out.printf("\n Chemical faculty , ENGLISH ,1 group: \t%.2f",chemicalFaculty.getSubjectAverageAssesment(Subjects.ENGLISH, Groups.FIRST));
-		System.out.printf("\n university java: \t%.2f",university.getSubjectAverageAssesment(Subjects.JAVA));
-		System.out.printf("\n university english: \t%.2f ",university.getSubjectAverageAssesment(Subjects.ENGLISH));
+		try {
+			System.out.printf("\n Bondarev's assess : %.2f", bondarevAleksey.getOverallAverageAssessment());
+			System.out.printf("\n Math for 2 group: \t%.2f", mathematicalFaculty.getSubjectAverageAssesment(Subjects.MATH, Groups.SECOND));
+			System.out.printf("\n Math for 1 group: \t%.2f", groupFirstMath.getSubjectAverageAssessment(Subjects.MATH));
+
+			System.out.printf("\n Faculty math , java , 3 group: \t%.2f", mathematicalFaculty.getSubjectAverageAssesment(Subjects.JAVA, Groups.THIRD));
+
+			System.out.printf("\n university, economics faculty, chemical:\t%.2f", university.getSubjectAverageAssesment(Subjects.ECONOMICS, Faculties.CHEMICAL));
+			System.out.printf("\n university math: \t%.2f", university.getSubjectAverageAssessment(Subjects.MATH));
+
+			System.out.printf("\n Chemical faculty , ENGLISH ,1 group: \t%.2f", chemicalFaculty.getSubjectAverageAssesment(Subjects.ENGLISH, Groups.FIRST));
+			System.out.printf("\n university java: \t%.2f", university.getSubjectAverageAssessment(Subjects.JAVA));
+			System.out.printf("\n university english: \t%.2f ", university.getSubjectAverageAssessment(Subjects.ENGLISH));
+		}catch (IllegalArgumentException e){
+			System.out.println(e.getMessage());
+		}
 		
 		
 	

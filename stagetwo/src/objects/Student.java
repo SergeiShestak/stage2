@@ -8,75 +8,74 @@ import java.util.Map;
 import org.apache.commons.collections4.MultiValuedMap;
 import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
 
-import exceptions.AssesmentException;
+import exceptions.AssessmentException;
+import sources.StudyState;
 import sources.Subjects;
 
 
-public class Student extends University{
+public class Student implements StudyState {
 	
 	
 	Map<String,MultiValuedMap<Subjects,Integer>> studentObject = new HashMap<>(); 
-	MultiValuedMap<Subjects,Integer> assesments = new ArrayListValuedHashMap<>();
+	MultiValuedMap<Subjects,Integer> assessment = new ArrayListValuedHashMap<>();
 	
 	
 	public Student(String namePlusSurname) {
 		
-		studentObject.put(namePlusSurname, assesments);
+		studentObject.put(namePlusSurname, assessment);
 	}
 	
-	public void setAssesments (Subjects subject,Integer gottenAssesment) throws AssesmentException{ 
+	public void setAssessments(Subjects subject, Integer gottenAssessment) throws AssessmentException {
 		
-		if(gottenAssesment > 0 && gottenAssesment <=10) {
-			assesments.put(subject,gottenAssesment);
+		if(gottenAssessment > 0 && gottenAssessment <=10) {
+			assessment.put(subject,gottenAssessment);
 		}else {
-			throw new AssesmentException("Invalid assessment, it must be between 1 to 10 ");
+			throw new AssessmentException("Invalid assessment, it must be between 1 to 10 ");
 		}
 	}
 	
 	
-	public double getOverallAverageAssesment() {
+	public double getOverallAverageAssessment() {
 		
-		List<Integer> overallAssesments = new ArrayList<>();
-		double sumAssesments = 0;
+		List<Integer> overallAssessments = new ArrayList<>();
+		double sumAssessments = 0;
 		
 		try {
-			if(assesments.isEmpty())
+			if(assessment.isEmpty())
 				throw new IllegalArgumentException("Must have at least one subject");
 		
-			for(int asses:assesments.values()) {
+			for(int asses: assessment.values()) {
 				
-				overallAssesments.add(asses);
+				overallAssessments.add(asses);
 				}
-				for(int res:overallAssesments) {
+				for(int res:overallAssessments) {
 				
-					sumAssesments += res;
+					sumAssessments += res;
 				}
 			
 		}catch(NullPointerException e) {
 			System.err.println("Exception is: " + e.getMessage());
-		}catch(IllegalArgumentException e){
-			System.out.println("Please add subject for student:  " + e.getMessage());
 		}
-		return sumAssesments/overallAssesments.size();
+		return sumAssessments/overallAssessments.size();
 		
 	}
 	
 	
-	public double getSubjectAverageAssesment(Subjects subject) {
+	public double getSubjectAverageAssessment(Subjects subject) throws AssessmentException {
 		
-		double sumAssesments = 0;
+		double sumAssessments = 0;
 		List<Integer> subjectAssesments = new ArrayList<>();
 		
 		try {
-			if(assesments.isEmpty())
+			if(assessment.isEmpty())
 				throw new IllegalArgumentException("Must have at least one subject");
-			for(Integer key:assesments.get(subject)) {
+			for(Integer key: assessment.get(subject)) {
 				
 			    subjectAssesments.add(key);	
 			}
 			for(Integer asses:subjectAssesments) {
 			
-				sumAssesments += asses;
+				sumAssessments += asses;
 			
 		}
 		}catch(NullPointerException e) {
@@ -84,7 +83,7 @@ public class Student extends University{
 		}catch (IllegalArgumentException e){
 			System.out.println("Please add subject for student:  "+ e.getMessage());
 		}
-		return sumAssesments/subjectAssesments.size();
+		return sumAssessments/subjectAssesments.size();
     }
 	
 	

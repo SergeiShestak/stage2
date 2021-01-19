@@ -5,10 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import exceptions.AssessmentException;
 import sources.Groups;
+import sources.StudyState;
 import sources.Subjects;
 
-public class Faculty extends University {
+public class Faculty implements StudyState {
 	
 	Map<Groups,Group> facultySet = new HashMap<>();
 	
@@ -25,9 +27,9 @@ public Map<Groups,Group> getFaculty() {
 
 
 
-	public double getSubjectAverageAssesment(Subjects subject) {
+	public double getSubjectAverageAssessment(Subjects subject) throws AssessmentException {
 		
-		double facultySubjectAverageAssesment = 0;
+		double facultySubjectAverageAssessment = 0;
 		List<Group> subjectAssesment = new ArrayList<>();
 		
 		try {
@@ -36,14 +38,14 @@ public Map<Groups,Group> getFaculty() {
 			subjectAssesment.addAll(facultySet.values());
 			for(Group asses:subjectAssesment) {
 			
-				facultySubjectAverageAssesment += asses.getSubjectAverageAssesment(subject);
+				facultySubjectAverageAssessment += asses.getSubjectAverageAssessment(subject);
 			}
 		}catch(NullPointerException e) {
 			System.err.println("Exception is: " + e.getMessage());
 		}catch (IllegalArgumentException e){
 			System.out.println("Please add a group: " + e.getMessage());
 		}
-		return facultySubjectAverageAssesment/subjectAssesment.size();
+		return facultySubjectAverageAssessment/subjectAssesment.size();
 		
 	}
 	
@@ -59,12 +61,14 @@ public Map<Groups,Group> getFaculty() {
 	
 			for(Group asses:subjectAssesment) {
 		
-				facultySubjectAverageAssesment += asses.getSubjectAverageAssesment(subject);
+				facultySubjectAverageAssesment += asses.getSubjectAverageAssessment(subject);
 		}
 		}catch(NullPointerException e) {
 			System.err.println("Exception e" + e.getMessage());
 		}catch (IllegalArgumentException e){
 			System.out.println("Please add a group: " + e.getMessage());
+		} catch (AssessmentException e) {
+			e.printStackTrace();
 		}
 		return facultySubjectAverageAssesment/subjectAssesment.size();
 	

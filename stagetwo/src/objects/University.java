@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import exceptions.AssessmentException;
 import sources.Faculties;
 import sources.StudyState;
 import sources.Subjects;
@@ -27,7 +28,7 @@ public Map<Faculties,Faculty> getFaculties() {
 
 
 
-public double getSubjectAverageAssesment(Subjects subject) {
+public double getSubjectAverageAssessment(Subjects subject) throws AssessmentException {
 		
 		double universitySubjectAverageAssesment = 0;
 		List<Faculty> assesFaculty = new ArrayList<>();
@@ -39,7 +40,7 @@ public double getSubjectAverageAssesment(Subjects subject) {
 		
 			for(Faculty listFaculty:assesFaculty) {
 			
-				universitySubjectAverageAssesment += listFaculty.getSubjectAverageAssesment(subject);
+				universitySubjectAverageAssesment += listFaculty.getSubjectAverageAssessment(subject);
 			}
 		}catch(NullPointerException e) {
 			System.err.println("Exception is: " + e.getMessage());
@@ -55,13 +56,15 @@ public double getSubjectAverageAssesment(Subjects subject,Faculties faculty) {
 		try {
 			if(universitySet.isEmpty())
 				throw new IllegalArgumentException("Must have at least one faculty");
-		univerFacultySubjectAverageAssesment += universitySet.get(faculty).getSubjectAverageAssesment(subject);
+		univerFacultySubjectAverageAssesment += universitySet.get(faculty).getSubjectAverageAssessment(subject);
 		}catch(NullPointerException e){
 			System.err.println("Exception is: "+ e.getMessage());
 		}catch (IllegalArgumentException e){
 			System.out.println("Please add a faculty: " + e.getMessage());
+		} catch (AssessmentException e) {
+			e.printStackTrace();
 		}
-		
-		return univerFacultySubjectAverageAssesment;
+
+	return univerFacultySubjectAverageAssesment;
     }
 }

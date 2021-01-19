@@ -4,28 +4,31 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import exceptions.AssessmentException;
+import sources.StudyState;
 import sources.Subjects;
 
-public class Group extends University {
+public class Group implements StudyState {
 	
 	Set<Student> group = new HashSet<>();
 	
 	public Group () {}
 	
-	public double getSubjectAverageAssesment(Subjects subject) {
-		List<Double> listSubjectAssesments = new ArrayList<>();
-		double groupSubjectAverageAssesment = 0;
+	public double getSubjectAverageAssessment(Subjects subject) throws AssessmentException {
+		List<Double> listSubjectAssessments = new ArrayList<>();
+		double groupSubjectAverageAssessment = 0;
 		try {
 			if(group.isEmpty())
 				throw new IllegalArgumentException("Must have at least one student");
 			for(Student student:group) {
 			
-				listSubjectAssesments.add(student.getSubjectAverageAssesment(subject));
+				listSubjectAssessments.add(student.getSubjectAverageAssessment(subject));
 			}
 		
-			for(Double asses:listSubjectAssesments) {
+			for(Double asses:listSubjectAssessments) {
 			
-				groupSubjectAverageAssesment += asses;
+				groupSubjectAverageAssessment += asses;
 			}
 		}catch(NullPointerException e) {
 			System.err.println("Exception is: " + e.getMessage());
@@ -33,7 +36,7 @@ public class Group extends University {
 			System.out.println("Please add a student: " + e.getMessage());
 		}
 		
-		return groupSubjectAverageAssesment/listSubjectAssesments.size();
+		return groupSubjectAverageAssessment/listSubjectAssessments.size();
 		
 	}
 
