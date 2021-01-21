@@ -1,0 +1,30 @@
+
+classes
+	|--------Main.class
+	|--------PathToString.class
+	|--------HandlerFolder.class
+	|--------HandlerFile.class
+
+usingio
+	|--------usingio.iml
+	|--------pom.xml
+
+.idea
+	|--------workspace.xml
+	|--------misc.xml
+	|--------vcs.xml
+	|--------uiDesigner.xml
+	|--------compiler.xml
+	|--------jarRepositories.xml
+
+java
+	|--------Main.java
+	|--------Main.class
+	|--------PathToString.class
+	|--------HandlerFolder.class
+	|--------PathInFile.java
+	|--------HandlerFolder.java
+	|--------HandlerFile.class
+	|--------treefiles.txt
+	|--------PathToString.java
+	|--------PathInFile.class
