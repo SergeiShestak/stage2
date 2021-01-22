@@ -6,6 +6,7 @@ public class Main {
 
     public static void main (String [] args) throws IOException {
 
+
         if (args == null || args.length == 0) {
 
             System.out.println("Please start with arguments Path to file or Folder");
@@ -19,14 +20,16 @@ public class Main {
             File argsFile = argsPath.toFile();
 
             if (argsFile.exists() && !argsFile.isDirectory()) {
-                String[] pathArgs = PathToString.pathToString(argsFile.getAbsolutePath());
-                for (String path : pathArgs) {
-                    System.out.print(path + "\n\t |---");
+                HandlerFolder.listFilesForFolder(argsPath.getParent().getParent().getParent());
+                System.out.println("Size of file is: ");
 
-                }
+                System.out.println("Amount of folders: " + argsFile.list().length);
+                System.out.println("Average amount files in the folders: ");
+
+
             }else {
                 HandlerFolder.listFilesForFolder(argsPath);
-                PathInFile.checkingFile();
+                PathInFile.checkingFile(HandlerFolder.filesMap);
             }
 
         }

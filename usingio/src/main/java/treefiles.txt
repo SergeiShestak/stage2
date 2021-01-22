@@ -6,6 +6,7 @@ classes
 	|--------HandlerFile.class
 
 usingio
+	|--------.gitignore
 	|--------usingio.iml
 	|--------pom.xml
 

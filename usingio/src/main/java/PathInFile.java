@@ -9,46 +9,50 @@ import java.util.Set;
 
 public class PathInFile {
 
-    final static String path =("treefiles.txt");
+    final static String path = ("treefiles.txt");
 
-    public static void writeFile(Map<Path, Set<File>> filesMap){
+    public static void writeFile(Map<Path, Set<File>> filesMap) {
 
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(path))){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
             {
-             filesMap.forEach((key, value) -> {
-                 try {
-                     writer.write(String.format("\n%s\n", key));
-                        for(File val:value){
-                            writer.write(String.format("\t|--------%s\n",val));
+                filesMap.forEach((key, value) -> {
+                    try {
+                        writer.write(String.format("\n%s\n", key));
+                        for (File val : value) {
+                            writer.write(String.format("\t|--------%s\n", val));
                         }
 
-                 } catch (IOException e) {
-                     e.printStackTrace();
-                 }
-             });
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
 
             }
 
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 
 
-
-    public static void checkingFile(){
+    public static void checkingFile(Map<Path, Set<File>> filesMap) {
         Path existPath = Paths.get(path);
-        if(existPath.toFile().exists()){
-            if(existPath.toFile().length() > 2048);
-                writeFile(HandlerFolder.filesMap);
-            }else {
-                try(BufferedWriter writer = new BufferedWriter(new FileWriter(path,true))){
+        if (existPath.toFile().exists()) {
+
+            System.out.println("first IF");
+
+            if (existPath.toFile().length() > 2048) {
+                System.out.println("second IF");
+                writeFile(filesMap);
+            } else {
+                System.out.println("ELSE");
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(path, true))) {
                     {
-                        HandlerFolder.filesMap.forEach((key, value) -> {
+                        filesMap.forEach((key, value) -> {
                             try {
                                 writer.write(String.format("\n%s\n", key));
-                                for(File val:value){
-                                    writer.write(String.format("\t|--------%s\n",val));
+                                for (File val : value) {
+                                    writer.write(String.format("\t|--------%s\n", val));
                                 }
 
                             } catch (IOException e) {
@@ -58,12 +62,14 @@ public class PathInFile {
 
                     }
 
-                }catch (IOException e){
+                } catch (IOException e) {
                     System.out.println(e.getMessage());
                 }
             }
         }
     }
+}
+
 
 
 
