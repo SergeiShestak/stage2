@@ -1,9 +1,10 @@
 
 classes
+	|--------ReadingFile.class
 	|--------Main.class
 	|--------PathToString.class
 	|--------HandlerFolder.class
-	|--------HandlerFile.class
+	|--------PathInFile.class
 
 usingio
 	|--------.gitignore
@@ -19,6 +20,7 @@ usingio
 	|--------jarRepositories.xml
 
 java
+	|--------ReadingFile.class
 	|--------Main.java
 	|--------Main.class
 	|--------PathToString.class
@@ -27,5 +29,6 @@ java
 	|--------HandlerFolder.java
 	|--------HandlerFile.class
 	|--------treefiles.txt
+	|--------ReadingFile.java
 	|--------PathToString.java
 	|--------PathInFile.class

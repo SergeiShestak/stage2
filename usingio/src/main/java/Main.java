@@ -1,6 +1,7 @@
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Set;
 
 public class Main {
 
@@ -10,29 +11,28 @@ public class Main {
         if (args == null || args.length == 0) {
 
             System.out.println("Please start with arguments Path to file or Folder");
-        }
+        }else {
+            for (String refined:args) {
 
+                Path argsPath = Paths.get(refined);
+                File argsFile = argsPath.toFile();
 
+                if (argsFile.exists() && !argsFile.isDirectory()) {
+                    System.out.println(ReadingFile.ReadingFile(argsPath).toString());
+                    System.out.println("Number of folders: " + ReadingFile.ReadingFile(argsPath).size());
+                    System.out.println("Number of files: " + ReadingFile.ReadingFile(argsPath).values().stream().mapToInt(Set::size).sum());
 
-        for (String refined:args) {
+                }else {
+                    HandlerFolder.listFilesForFolder(argsPath);
+                    PathInFile.checkingFile(HandlerFolder.filesMap);
+                }
 
-            Path argsPath = Paths.get(refined);
-            File argsFile = argsPath.toFile();
-
-            if (argsFile.exists() && !argsFile.isDirectory()) {
-                HandlerFolder.listFilesForFolder(argsPath.getParent().getParent().getParent());
-                System.out.println("Size of file is: ");
-
-                System.out.println("Amount of folders: " + argsFile.list().length);
-                System.out.println("Average amount files in the folders: ");
-
-
-            }else {
-                HandlerFolder.listFilesForFolder(argsPath);
-                PathInFile.checkingFile(HandlerFolder.filesMap);
             }
-
         }
+
+
+
+
     }
 
 }

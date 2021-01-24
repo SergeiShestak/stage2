@@ -11,7 +11,7 @@ public class HandlerFolder {
 
    public static void listFilesForFolder(final Path folder) {
       Set<File> listTemp = new HashSet<>();
-      for(final File fileEntry:folder.toFile().listFiles()){
+      for(final File fileEntry: folder.toFile().listFiles()){
 
          if(fileEntry.isDirectory()) {
             listFilesForFolder(fileEntry.toPath());
