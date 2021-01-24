@@ -10,14 +10,11 @@ import java.util.Set;
 
 public class ReadingFile {
 
-    Path path;
-    public static Map<String,Set<String>> ReadingFile(Path path){
+    public static Map<String,Set<String>> readingFile(Path path){
 
         String resourceLine;
 
         Map<String, Set<String>> foldersFileMap = new LinkedHashMap<>();
-
-        int countOfFiles;
 
         try(BufferedReader reader = new BufferedReader(new FileReader(path.toString()))){
             resourceLine = reader.readLine();

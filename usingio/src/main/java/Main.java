@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Main {
 
-    public static void main (String [] args) throws IOException {
+    public static void main (String [] args) {
 
 
         if (args == null || args.length == 0) {
@@ -18,9 +18,9 @@ public class Main {
                 File argsFile = argsPath.toFile();
 
                 if (argsFile.exists() && !argsFile.isDirectory()) {
-                    System.out.println(ReadingFile.ReadingFile(argsPath).toString());
-                    System.out.println("Number of folders: " + ReadingFile.ReadingFile(argsPath).size());
-                    System.out.println("Number of files: " + ReadingFile.ReadingFile(argsPath).values().stream().mapToInt(Set::size).sum());
+                    System.out.println(ReadingFile.readingFile(argsPath).toString());
+                    System.out.println("Number of folders: " + ReadingFile.readingFile(argsPath).size());
+                    System.out.println("Number of files: " + ReadingFile.readingFile(argsPath).values().stream().mapToInt(Set::size).sum());
 
                 }else {
                     HandlerFolder.listFilesForFolder(argsPath);

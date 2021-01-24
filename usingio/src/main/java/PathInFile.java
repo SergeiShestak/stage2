@@ -41,7 +41,7 @@ public class PathInFile {
 
             System.out.println("first IF");
 
-            if (existPath.toFile().length() > 2048) {
+            if (existPath.toFile().length() > 0){
                 System.out.println("second IF");
                 writeFile(filesMap);
             } else {
