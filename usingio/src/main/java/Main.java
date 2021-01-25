@@ -18,9 +18,14 @@ public class Main {
                 File argsFile = argsPath.toFile();
 
                 if (argsFile.exists() && !argsFile.isDirectory()) {
-                    System.out.println(ReadingFile.readingFile(argsPath).toString());
-                    System.out.println("Number of folders: " + ReadingFile.readingFile(argsPath).size());
-                    System.out.println("Number of files: " + ReadingFile.readingFile(argsPath).values().stream().mapToInt(Set::size).sum());
+                    int numberOfFolders = ReadingFile.readingFile(argsPath).size();
+                    int numbersOfFiles = ReadingFile.readingFile(argsPath).values().stream().mapToInt(Set::size).sum();
+                    int lengthOfNameOfFile = ReadingFile.readingFile(argsPath).values().toString().trim().length();
+
+                    System.out.println("Number of folders: " + numberOfFolders);
+                    System.out.println("Number of files: " + numbersOfFiles);
+                    System.out.println("Average of files in the folders: " + numbersOfFiles/numberOfFolders);
+                    System.out.println("Average length of name of file:  " + lengthOfNameOfFile/numbersOfFiles);
 
                 }else {
                     HandlerFolder.listFilesForFolder(argsPath);

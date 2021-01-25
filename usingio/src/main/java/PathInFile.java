@@ -39,10 +39,7 @@ public class PathInFile {
         Path existPath = Paths.get(path);
         if (existPath.toFile().exists()) {
 
-            System.out.println("first IF");
-
             if (existPath.toFile().length() > 0){
-                System.out.println("second IF");
                 writeFile(filesMap);
             } else {
                 System.out.println("ELSE");
