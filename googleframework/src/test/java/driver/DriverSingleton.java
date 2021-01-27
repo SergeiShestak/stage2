@@ -20,16 +20,18 @@ public class DriverSingleton {
 				
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
+				break;
 			}
 			default:{
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
 			}
 				
-			}
-			driver.manage().window().maximize();
 		}
-		return driver;	
+		driver.manage().window().maximize();	
+	}
+	return driver;	
+		
 	}
 	public static void closeDriver() {
 		

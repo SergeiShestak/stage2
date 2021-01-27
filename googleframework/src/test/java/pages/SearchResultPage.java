@@ -12,7 +12,7 @@ public class SearchResultPage extends AbstractPage {
 	private final String PAGE_URL = "https://cloud.google.com/s/results?q=Google%20Cloud%20platform%20calculator";
 	private final Logger logger = LogManager.getRootLogger();
 	
-	@FindBy(xpath = "//b[contains(text() 'Google Cloud Platform ']")
+	@FindBy(xpath = "//a[@class='gs-title']")
 	private WebElement selectCalculatorPlatform;
 	
 	
