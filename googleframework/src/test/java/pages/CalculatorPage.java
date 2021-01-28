@@ -21,7 +21,7 @@ public class CalculatorPage extends AbstractPage {
 	WebDriverWait wait = new WebDriverWait(driver,10);
 	private final String PAGE_URL = "https://cloud.google.com/products/calculator";
 	private final Logger logger = LogManager.getRootLogger();
-	private String result;
+	public static String result;
 	@FindBy(id = "input_63")
 	private WebElement quantityOfInstances;
 	@FindBy(id = "select_88")
@@ -48,6 +48,12 @@ public class CalculatorPage extends AbstractPage {
 	private WebElement buttonAdd;
 	@FindBy(xpath = "//h2[@class = 'md-title']")
 	private WebElement resultEstimate;
+	@FindBy(xpath = "//input[@type='email']")
+	private WebElement inputForEmailAddress;
+	@FindBy(xpath = "//button[@aria-label = 'Email Estimate']")
+	private WebElement buttonEmail;
+	@FindBy(xpath = "//button[@aria-label = 'Send Email']")
+	private WebElement buttonSendEmail;
 	
 
 	public CalculatorPage(WebDriver driver) {
@@ -99,8 +105,29 @@ public class CalculatorPage extends AbstractPage {
 	public String takeEstimate(){
 
 		result = resultEstimate.getText();
+		buttonEmail.click();
+		wait.until(ExpectedConditions.visibilityOf(inputForEmailAddress));
 
 		return result;
+	}
+
+	public CalculatorPage switchFrame(){
+
+		driver.switchTo().frame(0)
+				.switchTo()
+				.frame("myFrame");
+
+		return this;
+	}
+
+	public void sendMail(String mailAddress){
+
+		inputForEmailAddress.click();
+		wait.withTimeout(Duration.ofSeconds(2));
+		inputForEmailAddress.sendKeys(mailAddress);
+		wait.until(ExpectedConditions.elementToBeClickable(buttonSendEmail));
+		buttonSendEmail.click();
+
 	}
 	
 
