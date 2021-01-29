@@ -21,7 +21,7 @@ public class MailService extends AbstractPage {
     private WebElement address;
     @FindBy(xpath = "//div[@class = 'message_top']")
     private WebElement gottenMail;
-    @FindBy(xpath = "//*[@id='mobilepadding']/td/table/tbody/tr[2]/td[2]/h3")
+    @FindBy(xpath = "//table[@class ='quote']/tbody/tr[2]/td[2]/h3")
     private WebElement resultFromMail;
     public static String gottenMailAdress;
     public static String gottenResultEstimate;
@@ -50,7 +50,6 @@ public class MailService extends AbstractPage {
 
         Thread.sleep(30000);
         gottenMail.click();
-        wait.until(ExpectedConditions.visibilityOf(resultFromMail));
         return gottenResultEstimate = resultFromMail.getText();
     }
 }

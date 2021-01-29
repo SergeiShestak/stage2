@@ -46,7 +46,7 @@ public class CalculatorPage extends AbstractPage {
 	private WebElement usageOneYear;
 	@FindBy(xpath = "//button[@aria-label = 'Add to Estimate']")
 	private WebElement buttonAdd;
-	@FindBy(xpath = "//h2[@class = 'md-title']")
+	@FindBy(xpath = "//b[@class = 'ng-binding']")
 	private WebElement resultEstimate;
 	@FindBy(xpath = "//input[@type='email']")
 	private WebElement inputForEmailAddress;
@@ -104,7 +104,7 @@ public class CalculatorPage extends AbstractPage {
 	
 	public String takeEstimate(){
 
-		result = resultEstimate.getText();
+		result = resultEstimate.getText().substring(resultEstimate.getText().indexOf(":"));
 		buttonEmail.click();
 		wait.until(ExpectedConditions.visibilityOf(inputForEmailAddress));
 

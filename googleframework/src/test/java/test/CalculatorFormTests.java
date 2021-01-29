@@ -81,7 +81,7 @@ public class CalculatorFormTests extends CommonConditions {
 		switchWindows(0);
 		mailService.takeMail();
 
-		Assert.assertEquals(CalculatorPage.result,mailService.takeMail());
+		Assert.assertTrue(CalculatorPage.result.contains(MailService.gottenResultEstimate));
 	}
 
 }

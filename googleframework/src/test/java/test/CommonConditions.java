@@ -21,11 +21,11 @@ public class CommonConditions {
 		driver = DriverSingleton.getDriver();
 	}
 	
-//	@AfterMethod(alwaysRun = true)
-//	public void stopBrowser() {
-//
-//		DriverSingleton.closeDriver();
-//	}
+	@AfterMethod(alwaysRun = true)
+	public void stopBrowser() {
+
+		DriverSingleton.closeDriver();
+	}
 	
 	
 
