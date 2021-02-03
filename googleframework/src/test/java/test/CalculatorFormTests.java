@@ -1,22 +1,17 @@
 package test;
 
+import driver.CommonConditions;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.CalculatorPage;
-import pages.GoogleCloudPage;
 import pages.MailService;
-import pages.SearchResultPage;
 
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -36,26 +31,8 @@ public class CalculatorFormTests extends CommonConditions {
 			i++;
 		}
 	}
-	
-//	@Test
-//
-//	public void startFirstPage(){
-//
-//		GoogleCloudPage googleCloudPage = new GoogleCloudPage(driver);
-//		googleCloudPage.openPage()
-//				.openSearchResultPage();
-//		//Assert.assertEquals(this,driver.getTitle(),"equals");
-//	}
-//
-//	@Test
-//
-//	public void openSecondPage (){
-//
-//		SearchResultPage searchResultPage = new SearchResultPage(driver);
-//		searchResultPage.openPage()
-//				.selectCalculator();
-//		//Assert.assertEquals(this,driver.getCurrentUrl(),"this interesting");
-//	}
+
+
 	@Test
 	public void fillAndSubmitFormAndCompareResultMail() throws IOException, UnsupportedFlavorException,InterruptedException {
 

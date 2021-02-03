@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Smoke" verbose="1" >
-    <test name="OpenStartPage"   >
+    <test name="CloudGooglePageTest"   >
         <classes>
-            <class name="test.StartPageTest" />
+            <class name="test.CloudGooglePageTest" />
         </classes>
     </test>
 </suite>

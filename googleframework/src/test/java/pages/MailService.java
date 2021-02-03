@@ -8,12 +8,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.UnsupportedFlavorException;
+import java.awt.datatransfer.*;
 import java.io.IOException;
 import java.time.Duration;
 
-public class MailService extends AbstractPage {
+public class MailService extends AbstractPage implements Transferable, ClipboardOwner {
 
     WebDriverWait wait = new WebDriverWait(driver,5);
     final String URL_PAGE = "https://10minutemail.com";
@@ -51,6 +50,26 @@ public class MailService extends AbstractPage {
         Thread.sleep(30000);
         gottenMail.click();
         return gottenResultEstimate = resultFromMail.getText();
+    }
+
+    @Override
+    public void lostOwnership(Clipboard clipboard, Transferable transferable) {
+
+    }
+
+    @Override
+    public DataFlavor[] getTransferDataFlavors() {
+        return new DataFlavor[0];
+    }
+
+    @Override
+    public boolean isDataFlavorSupported(DataFlavor dataFlavor) {
+        return false;
+    }
+
+    @Override
+    public Object getTransferData(DataFlavor dataFlavor) throws UnsupportedFlavorException, IOException {
+        return null;
     }
 }
 
