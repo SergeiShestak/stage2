@@ -58,19 +58,16 @@ public class GateManager {
 		try {
 		thr1.join();
 	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 		try {
 			thr2.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			thr3.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
