@@ -57,9 +57,9 @@ public class GateManager {
 		
 		try {
 		thr1.join();
-	} catch (InterruptedException e) {
+		} catch (InterruptedException e) {
 		e.printStackTrace();
-	}
+		}
 		try {
 			thr2.join();
 		} catch (InterruptedException e) {
