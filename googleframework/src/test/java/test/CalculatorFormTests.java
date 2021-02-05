@@ -2,8 +2,6 @@ package test;
 
 import driver.CommonConditions;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,6 +15,9 @@ import java.util.Set;
 
 public class CalculatorFormTests extends CommonConditions {
 
+	String gottenMailAdress;
+	String result;
+	String gottenResultEstimate;
 
 	public void switchWindows(int windowNumber){
 
@@ -36,29 +37,27 @@ public class CalculatorFormTests extends CommonConditions {
 	@Test
 	public void fillAndSubmitFormAndCompareResultMail() throws IOException, UnsupportedFlavorException,InterruptedException {
 
-		WebDriverWait wait = new WebDriverWait(driver,5);
 		MailService mailService = new MailService(driver);
 		CalculatorPage calculatorPage = new CalculatorPage(driver);
-		calculatorPage.openPage()
+		result = calculatorPage.openPage()
 					.fillForm()
 					.takeEstimate();
 
 		((JavascriptExecutor)driver).executeScript("window.open();");
-		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 
 		switchWindows(0);
 		mailService.openPage();
-		mailService.takeAdress();
+		gottenMailAdress = mailService.takeAdress();
 
 		switchWindows(1);
 
 		calculatorPage.switchFrame()
-				.sendMail(MailService.gottenMailAdress);
+				.sendMail(gottenMailAdress);
 
 		switchWindows(0);
-		mailService.takeMail();
+		gottenResultEstimate = mailService.takeMail();
 
-		Assert.assertTrue(CalculatorPage.result.contains(MailService.gottenResultEstimate));
+		Assert.assertTrue(result.contains(gottenResultEstimate));
 	}
 
 }

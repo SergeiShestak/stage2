@@ -18,11 +18,11 @@ import java.util.concurrent.TimeUnit;
 public class CalculatorPage extends AbstractPage {
 	
 	
-	WebDriverWait wait = new WebDriverWait(driver,10);
+	WebDriverWait wait;
 	private final String PAGE_URL = "https://cloud.google.com/products/calculator";
 	private final Logger logger = LogManager.getRootLogger();
 	public static String result;
-	@FindBy(id = "input_63")
+	@FindBy(xpath = "//input[@aria-label = 'quantity']")
 	private WebElement quantityOfInstances;
 	@FindBy(id = "select_88")
 	private WebElement selectSeries;
@@ -40,7 +40,7 @@ public class CalculatorPage extends AbstractPage {
 	private WebElement typeOfGPU;
 	@FindBy(xpath = "//md-option[@value = 'NVIDIA_TESLA_T4']")
 	private WebElement typeGPUTesla;
-	@FindBy(xpath = "//md-select[@placeholder = 'Committed usage']")
+	@FindBy(xpath = "//md-select[@placeholder = 'Committed usage'][@aria-label = 'Committed usage: None']")
 	private WebElement usageBox;
 	@FindBy(id = "select_option_97")
 	private WebElement usageOneYear;
@@ -58,21 +58,23 @@ public class CalculatorPage extends AbstractPage {
 
 	public CalculatorPage(WebDriver driver) {
 		super(driver);
-		PageFactory.initElements(driver,this);
-		
+		PageFactory.initElements(this.driver,this);
+
+		wait = new WebDriverWait(this.driver,WAIT_TIMEOUT_SECONDS);
 	}
 
 	@Override
 	public CalculatorPage openPage() {
-		
+
 		driver.navigate().to(PAGE_URL);
 		driver.switchTo().frame(0);
 		driver.switchTo().frame("myFrame");
 		logger.info("Calculator page opened");
-		
+
 		return this;
 	}
-	
+
+
 	public CalculatorPage fillForm() {
 		
 		quantityOfInstances.click();
@@ -90,7 +92,7 @@ public class CalculatorPage extends AbstractPage {
 		typeOfGPU.click();
 		wait.until(ExpectedConditions.visibilityOf(typeGPUTesla));
 		typeGPUTesla.click();
-		wait.withTimeout(Duration.ofSeconds(1));
+		wait.withTimeout(Duration.ofSeconds(3));
 		usageBox.click();
 		wait.until(ExpectedConditions.visibilityOf(usageOneYear));
 		usageOneYear.click();

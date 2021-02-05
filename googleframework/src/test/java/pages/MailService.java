@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class MailService extends AbstractPage implements Transferable, ClipboardOwner {
 
-    WebDriverWait wait = new WebDriverWait(driver,5);
+    WebDriverWait wait;
     final String URL_PAGE = "https://10minutemail.com";
     @FindBy(id = "copy_address")
     private WebElement address;
@@ -27,7 +27,8 @@ public class MailService extends AbstractPage implements Transferable, Clipboard
 
     public MailService(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(this.driver,this);
+        wait = new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS);
     }
 
     @Override

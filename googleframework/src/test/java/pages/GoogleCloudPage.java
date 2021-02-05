@@ -16,20 +16,21 @@ public class GoogleCloudPage extends AbstractPage {
 	private final Logger logger = LogManager.getRootLogger();
 	private final String URL_PAGE = "https://cloud.google.com";
 	private final String inputSearchInfo = "Google Cloud Platform Calculator";
-	
+	WebDriverWait wait;
 	@FindBy(name = "q")
 	WebElement inputField;
 	
 	public GoogleCloudPage(WebDriver driver) {
 		super(driver);
-		PageFactory.initElements(this.driver, this);
+		PageFactory.initElements(this.driver,this);
+		wait = new WebDriverWait(driver,10);
 	}
 
 	@Override
 	public GoogleCloudPage openPage() {
 		
 		driver.navigate().to(URL_PAGE);
-		WebDriverWait wait = new WebDriverWait(driver,10);
+
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.name("q")));
 
 		logger.info("Start Page opened");
