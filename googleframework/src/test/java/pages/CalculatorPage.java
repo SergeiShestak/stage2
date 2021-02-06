@@ -2,22 +2,20 @@ package pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.ReaderEnvironment;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class CalculatorPage extends AbstractPage {
 	
-	
+	String quantityOfInstanceData = "number.quantityOfInstance";
+	String amountOfGPUsData = "number.amountOfGPUs";
 	WebDriverWait wait;
 	private final String PAGE_URL = "https://cloud.google.com/products/calculator";
 	private final Logger logger = LogManager.getRootLogger();
@@ -78,7 +76,7 @@ public class CalculatorPage extends AbstractPage {
 	public CalculatorPage fillForm() {
 		
 		quantityOfInstances.click();
-		quantityOfInstances.sendKeys("4");
+		quantityOfInstances.sendKeys(ReaderEnvironment.getInputData(quantityOfInstanceData));
 		selectSeries.click();
 		wait.until(ExpectedConditions.visibilityOf(selectN1Series));
 		selectN1Series.click();
@@ -88,7 +86,7 @@ public class CalculatorPage extends AbstractPage {
 		selectMachineType8.click();
 		addingGPU.click();
 		wait.withTimeout(Duration.ofSeconds(3));
-		selectAmountGPU.sendKeys("2");
+		selectAmountGPU.sendKeys(ReaderEnvironment.getInputData(amountOfGPUsData));
 		typeOfGPU.click();
 		wait.until(ExpectedConditions.visibilityOf(typeGPUTesla));
 		typeGPUTesla.click();
