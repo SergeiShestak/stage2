@@ -23,7 +23,7 @@ public class DriverSingleton {
 				driver = new FirefoxDriver();
 				break;
 			}
-			default:{
+			case("chrome"):{
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
 			}

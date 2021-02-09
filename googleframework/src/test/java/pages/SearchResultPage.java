@@ -15,14 +15,10 @@ public class SearchResultPage extends AbstractPage {
 	@FindBy(xpath = "//a[@class='gs-title']")
 	private WebElement selectCalculatorPlatform;
 	
-	
-
 	public SearchResultPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver,this);
 	}
-	
-
 	@Override
 	public SearchResultPage openPage() {
 		
@@ -30,11 +26,9 @@ public class SearchResultPage extends AbstractPage {
 		logger.info("Search result page opened");
 		return this;
 	}
-	
 	public CalculatorPage selectCalculator() {
 		
 		selectCalculatorPlatform.click();
 		return new CalculatorPage(driver);
 	}
-
 }

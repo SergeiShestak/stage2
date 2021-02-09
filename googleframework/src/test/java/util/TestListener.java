@@ -56,13 +56,9 @@ public class TestListener implements ITestListener {
 	}
 
 	@Override
-	public void onFinish(ITestContext context) {
-
-		
-	}
+	public void onFinish(ITestContext context) { }
 	
 	private void saveScreenShot() {
-
 		File screenshotCapture = ((TakesScreenshot)DriverSingleton
 				.getDriver())
 				.getScreenshotAs(OutputType.FILE);
@@ -72,7 +68,6 @@ public class TestListener implements ITestListener {
 		}catch (IOException e){
 			log.error("Failed to save screenshot " + e.getLocalizedMessage());
 		}
-		
 	}
 
 	private String getCurrentTimeAsString(){

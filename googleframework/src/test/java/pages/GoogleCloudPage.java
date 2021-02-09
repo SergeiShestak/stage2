@@ -11,8 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleCloudPage extends AbstractPage {
-	
-	
 	private final Logger logger = LogManager.getRootLogger();
 	private final String URL_PAGE = "https://cloud.google.com";
 	private final String inputSearchInfo = "Google Cloud Platform Calculator";
@@ -25,27 +23,16 @@ public class GoogleCloudPage extends AbstractPage {
 		PageFactory.initElements(this.driver,this);
 		wait = new WebDriverWait(driver,10);
 	}
-
 	@Override
 	public GoogleCloudPage openPage() {
-		
 		driver.navigate().to(URL_PAGE);
-
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.name("q")));
-
 		logger.info("Start Page opened");
 		return this;
 	}
-
-	
 	public SearchResultPage openSearchResultPage() {
 		inputField.click();
 		inputField.sendKeys(inputSearchInfo,Keys.RETURN);
 		return new SearchResultPage(driver);
 	}
-	
-	
-	
-	
-
 }
