@@ -41,7 +41,7 @@ public class MailService extends AbstractPage implements Transferable, Clipboard
         return Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor).toString();
     }
     public String takeMail() throws InterruptedException {
-        Thread.sleep(30000);
+        Thread.sleep(20000);
         gottenMail.click();
         return gottenResultEstimate = resultFromMail.getText();
     }
