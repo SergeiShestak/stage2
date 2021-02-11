@@ -1,7 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,8 +23,7 @@ public class MailService extends AbstractPage implements Transferable, Clipboard
     private WebElement countOfEmail;
     public static String gottenResultEstimate;
 
-    public MailService(WebDriver driver) {
-        super(driver);
+    public MailService() {
         PageFactory.initElements(this.driver,this);
         wait = new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS);
     }

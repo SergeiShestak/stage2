@@ -18,8 +18,7 @@ public class GoogleCloudPage extends AbstractPage {
 	@FindBy(name = "q")
 	WebElement inputField;
 	
-	public GoogleCloudPage(WebDriver driver) {
-		super(driver);
+	public GoogleCloudPage() {
 		PageFactory.initElements(this.driver,this);
 		wait = new WebDriverWait(driver,10);
 	}
@@ -33,6 +32,6 @@ public class GoogleCloudPage extends AbstractPage {
 	public SearchResultPage openSearchResultPage() {
 		inputField.click();
 		inputField.sendKeys(inputSearchInfo,Keys.RETURN);
-		return new SearchResultPage(driver);
+		return new SearchResultPage();
 	}
 }

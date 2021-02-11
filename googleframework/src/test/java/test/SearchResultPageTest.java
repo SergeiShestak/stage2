@@ -11,7 +11,7 @@ public class SearchResultPageTest extends CommonConditions {
 
 	public void openSearchResultPage (){
 
-		SearchResultPage searchResultPage = new SearchResultPage(driver);
+		SearchResultPage searchResultPage = new SearchResultPage();
 		searchResultPage.openPage()
 				.selectCalculator();
 		Assert.assertEquals("Google Cloud Platform Pricing Calculator",driver.getTitle(),"this interesting");
