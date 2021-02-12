@@ -8,9 +8,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.HandlingTabs;
+
 import java.time.Duration;
 
-public class CalculatorPage extends AbstractPage {
+public class CalculatorPage extends AbstractPage implements HandlingTabs {
 	WebDriverWait wait;
 	private final String PAGE_URL = "https://cloud.google.com/products/calculator";
 	private final Logger logger = LogManager.getRootLogger();
@@ -37,11 +39,12 @@ public class CalculatorPage extends AbstractPage {
 		driver.navigate().to(PAGE_URL);
 		driver.switchTo().frame(0);
 		driver.switchTo().frame("myFrame");
-		logger.info("Calculator page opened");
+		logger.info("Calculator page is opened");
 		return this;
 	}
 	public CalculatorPage instanceSelection (String instances,String quantity) {
 		driver.findElement(By.xpath(instances)).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(instances)));
 		driver.findElement(By.xpath(instances)).sendKeys(quantity);
 		return this;
 	}
@@ -77,9 +80,9 @@ public class CalculatorPage extends AbstractPage {
 		driver.findElement(By.xpath(fieldTypeOfGPU)).click();
 		return this;
 	}
-	public CalculatorPage typeOfGPUSelection(String selectTupeGPU) {
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectTupeGPU)));
-		driver.findElement(By.xpath(selectTupeGPU)).click();
+	public CalculatorPage typeOfGPUSelect(String selectTypeGPU) {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectTypeGPU)));
+		driver.findElement(By.xpath(selectTypeGPU)).click();
 		return this;
 	}
 	public CalculatorPage openLocalSSDSelection(String amountLocalSSD) {
@@ -102,10 +105,10 @@ public class CalculatorPage extends AbstractPage {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(usageBox)));
 		return this;
 	}
-	public CalculatorPage usageSelection(String usage,String year){
+	public CalculatorPage usageSelection(String year){
 		usageInputBox.click();
 		wait.withTimeout(Duration.ofSeconds(2));
-		driver.findElement(By.xpath("")).sendKeys(year);
+		usageInputBox.sendKeys(year);
 		return this;
 	}
 
@@ -125,10 +128,12 @@ public class CalculatorPage extends AbstractPage {
 		driver.switchTo().frame(0).switchTo().frame("myFrame");
 		return this;
 	}
-	public void sendMail(String mailAddress){
+	public CalculatorPage shiftAddressMail(String mailAddress) {
 		inputForEmailAddress.click();
 		wait.withTimeout(Duration.ofSeconds(2));
-		inputForEmailAddress.sendKeys(mailAddress);
+		return this;
+	}
+	public void sendMail(){
 		wait.until(ExpectedConditions.elementToBeClickable(buttonSendEmail));
 		buttonSendEmail.click();
 	}

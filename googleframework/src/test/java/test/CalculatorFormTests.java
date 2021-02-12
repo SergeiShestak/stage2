@@ -20,15 +20,16 @@ public class CalculatorFormTests extends CommonConditions {
 	public void fillAndSubmitFormAndCompareResultMail() throws IOException, UnsupportedFlavorException, InterruptedException {
 		MailService mailService = new MailService();
 		CalculatorPage calculatorPage = new CalculatorPage();
-		new VirtualMachineService().createVirtuallMachine(VirtualMachineInitializer.virtualMachineInitializer());
+		new VirtualMachineService().createVirtualMachine(VirtualMachineInitializer.virtualMachineInitializer());
 		result = calculatorPage.takeEstimate();
 		calculatorPage.openNewWindow();
 		calculatorPage.switchWindows(0);
 		mailService.openPage();
 		gottenMailAdress = mailService.takeAdress();
 		calculatorPage.switchWindows(1);
-		calculatorPage.switchFrame()
-				.sendMail(gottenMailAdress);
+		calculatorPage.switchFrame();
+		calculatorPage.shiftAddressMail(gottenMailAdress);
+		calculatorPage.sendMail();
 		calculatorPage.switchWindows(0);
 		gottenResultEstimate = mailService.takeMail();
 		Assert.assertTrue(result.contains(gottenResultEstimate));

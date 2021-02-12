@@ -6,8 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import util.HandlingTabs;
 
-public class SearchResultPage extends AbstractPage {
+public class SearchResultPage extends AbstractPage implements HandlingTabs {
 	
 	private final String PAGE_URL = "https://cloud.google.com/s/results?q=Google%20Cloud%20platform%20calculator";
 	private final Logger logger = LogManager.getRootLogger();

@@ -5,14 +5,18 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.HandlingTabs;
+import org.apache.logging.log4j.*;
 import java.awt.*;
 import java.awt.datatransfer.*;
 import java.io.IOException;
 
-public class MailService extends AbstractPage implements Transferable, ClipboardOwner {
+
+public class MailService extends AbstractPage implements Transferable, ClipboardOwner, HandlingTabs {
 
     WebDriverWait wait;
-    final String URL_PAGE = "https://10minutemail.com";
+    private final String URL_PAGE = "https://10minutemail.com";
+    private final Logger logger = LogManager.getRootLogger();
     @FindBy(id = "copy_address")
     private WebElement address;
     @FindBy(xpath = "//div[@class = 'message_top']")
@@ -30,6 +34,7 @@ public class MailService extends AbstractPage implements Transferable, Clipboard
     @Override
     public MailService openPage() {
         driver.navigate().to(URL_PAGE);
+        logger.info("mailservice page is opened ");
         return this;
     }
     public String takeAdress() throws IOException, UnsupportedFlavorException {
@@ -40,6 +45,7 @@ public class MailService extends AbstractPage implements Transferable, Clipboard
     public String takeMail() throws InterruptedException {
         Thread.sleep(20000);
         gottenMail.click();
+        logger.info("estimate mail is received");
         return gottenResultEstimate = resultFromMail.getText();
     }
     @Override
